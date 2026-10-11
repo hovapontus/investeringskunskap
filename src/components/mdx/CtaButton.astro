@@ -1,5 +1,5 @@
 ---
-import { relFor, textOn } from '../../lib/affiliate';
+import { relFor, buttonColors } from '../../lib/affiliate';
 
 interface Props {
   href: string;
@@ -7,11 +7,12 @@ interface Props {
   color?: string;
 }
 const { href, label, color = '#3373dc' } = Astro.props;
+const btn = buttonColors(color);
 const external = /^https?:\/\//.test(href);
 ---
 
 <p class="cta">
-  <a href={href} rel={relFor(href)} target={external ? '_blank' : undefined} style={`background:${color};color:${textOn(color)}`}>{label}</a>
+  <a href={href} rel={relFor(href)} target={external ? '_blank' : undefined} style={`background:${btn.bg};color:${btn.fg}`}>{label}</a>
 </p>
 
 <style>

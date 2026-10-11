@@ -41,7 +41,7 @@ const title = page === 1 ? name : `${name} – sida ${page}`;
       <h1>{name}{page > 1 && <span class="head-page"> – sida {page}</span>}</h1>
     </header>
     <div class="grid">
-      {items.map((p) => <PostCard post={p} />)}
+      {items.map((p) => <PostCard post={p} level={2} />)}
     </div>
     <Pagination base={base} current={page} total={total} />
   </div>

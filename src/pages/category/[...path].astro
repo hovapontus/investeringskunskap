@@ -51,7 +51,7 @@ const description = `Alla inlägg i kategorin ${name} på Investeringskunskap.`;
       <h1>{name}{page > 1 && <span class="archive-head__page"> – sida {page}</span>}</h1>
     </header>
     <div class="grid">
-      {grid.map((p) => <PostCard post={p} />)}
+      {grid.map((p) => <PostCard post={p} level={2} />)}
     </div>
     <Pagination base={base} current={page} total={total} />
   </div>

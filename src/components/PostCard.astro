@@ -7,8 +7,10 @@ import { formatDate } from '../lib/format';
 interface Props {
   post: Post;
   eager?: boolean;
+  level?: 2 | 3; // heading level of the card title (3 under an h2 section, 2 directly under the page h1)
 }
-const { post, eager = false } = Astro.props;
+const { post, eager = false, level = 3 } = Astro.props;
+const H = `h${level}`;
 const d = post.data;
 const cat = d.primaryCategory ?? d.categories[0];
 const url = postUrl(post);
@@ -22,7 +24,7 @@ const url = postUrl(post);
     {cat && <a class="chip card__chip" href={categoryUrl(cat)}>{categoryName(cat)}</a>}
   </div>
   <div class="card__body">
-    <h3 class="card__title"><a href={url}>{d.title}</a></h3>
+    <H class="card__title"><a href={url}>{d.title}</a></H>
     <p class="meta card__meta">Av <strong>{d.author}</strong> · <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate)}</time></p>
     {d.description && <p class="card__excerpt">{d.description}</p>}
   </div>

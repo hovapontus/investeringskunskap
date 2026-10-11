@@ -37,13 +37,30 @@ export function hasAffiliate(source: string | undefined): boolean {
   return urls.some(isAffiliateHref);
 }
 
-/** Readable text colour (black/white) for a button background. */
-export function textOn(bg: string): string {
-  const m = /^#?([0-9a-f]{6})/i.exec(bg);
-  if (!m) return '#fff';
-  const [r, g, b] = [0, 2, 4]
-    .map((i) => parseInt(m[1].slice(i, i + 2), 16) / 255)
-    .map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
-  const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  return 1.05 / (L + 0.05) >= (L + 0.05) / 0.05 ? '#fff' : '#111';
+const toLinear = (c: number) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+const luminance = ([r, g, b]: number[]) => 0.2126 * toLinear(r / 255) + 0.7152 * toLinear(g / 255) + 0.0722 * toLinear(b / 255);
+const contrast = (a: number[], b: number[]) => {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+};
+const parse = (hex: string): number[] => {
+  const m = /^#?([0-9a-f]{6})/i.exec(hex);
+  return m ? [0, 2, 4].map((i) => parseInt(m[1].slice(i, i + 2), 16)) : [51, 115, 220];
+};
+const toHex = (rgb: number[]) => '#' + rgb.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
+
+/**
+ * Button colours from the original brand colour: picks white or black text and, if the pair is
+ * below WCAG AA (4.5:1), nudges the background lighter/darker until it passes.
+ */
+export function buttonColors(bg: string): { bg: string; fg: string } {
+  let rgb = parse(bg);
+  const white = [255, 255, 255];
+  const black = [0, 0, 0];
+  const useWhite = contrast(rgb, white) >= contrast(rgb, black);
+  const fg = useWhite ? white : black;
+  for (let i = 0; i < 40 && contrast(rgb, fg) < 4.5; i++) {
+    rgb = useWhite ? rgb.map((v) => v * 0.95) : rgb.map((v) => v + (255 - v) * 0.05);
+  }
+  return { bg: toHex(rgb), fg: toHex(fg) };
 }

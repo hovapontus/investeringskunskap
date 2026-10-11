@@ -3,11 +3,18 @@
 interface Props {
   html: string;
 }
-const { html } = Astro.props;
+import { isExternal, relFor } from '../../lib/affiliate';
+
+// Table cells bypass the MDX link renderer, so apply the same rel/target rules to their links here.
+const withRel = Astro.props.html.replace(/<a\s+href="([^"]*)"([^>]*)>/g, (_m, href: string, rest: string) => {
+  const url = href.replace(/&amp;/g, '&');
+  const rel = relFor(url);
+  return `<a href="${href}"${rel ? ` rel="${rel}"` : ''}${isExternal(url) ? ' target="_blank"' : ''}${rest}>`;
+});
 ---
 
 <div class="table-scroll" role="region" aria-label="Tabell" tabindex="0">
-  <Fragment set:html={html} />
+  <Fragment set:html={withRel} />
 </div>
 
 <style is:global>

@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import boxes from '../../data/affiliate-boxes.json';
 import { getUpload, isSvg } from '../../lib/images';
-import { SPONSORED_REL, textOn } from '../../lib/affiliate';
+import { SPONSORED_REL, buttonColors } from '../../lib/affiliate';
 
 interface Props {
   id: string;
@@ -11,6 +11,7 @@ type Box = { logo?: string; logoWidth?: number; logoAlt?: string; href: string; 
 const box = (boxes as Record<string, Box>)[Astro.props.id];
 if (!box) throw new Error(`Unknown affiliate box: ${Astro.props.id}`);
 const logo = box.logo ? await getUpload(box.logo) : null;
+const btn = buttonColors(box.color);
 const w = Math.min(box.logoWidth ?? 150, logo?.width ?? 150);
 ---
 
@@ -37,7 +38,7 @@ const w = Math.min(box.logoWidth ?? 150, logo?.width ?? 150);
       </ul>
     )
   }
-  <a class="affbox__btn" href={box.href} rel={SPONSORED_REL} target="_blank" style={`background:${box.color};color:${textOn(box.color)}`}>{box.label}</a>
+  <a class="affbox__btn" href={box.href} rel={SPONSORED_REL} target="_blank" style={`background:${btn.bg};color:${btn.fg}`}>{box.label}</a>
 </aside>
 
 <style>
