@@ -1,0 +1,19 @@
+# Old WordPress slugs (renamed posts)
+/starta-eget-sparande/ /borja-investera-vagen-till-rikedom/ 301
+/kopa-guld-en-guide/ /investera-i-guld/ 301
+/basta-finanspoddarna-for-att-bli-en-lyckad-investerare/ /finanspoddar-for-att-bli-en-lyckad-investerare/ 301
+
+# WordPress static front page, author archives and category alias
+/hem/ / 301
+/author/* / 301
+/category/nfts/ /category/krypto/nfts/ 301
+
+# Yoast / WordPress sitemaps and comment/post feeds
+/sitemap_index.xml /sitemap-index.xml 301
+/wp-sitemap.xml /sitemap-index.xml 301
+/post-sitemap.xml /sitemap-index.xml 301
+/page-sitemap.xml /sitemap-index.xml 301
+/category-sitemap.xml /sitemap-index.xml 301
+/comments/feed/ /feed/ 301
+/category/:slug/feed/ /feed/ 301
+/:slug/feed/ /feed/ 301

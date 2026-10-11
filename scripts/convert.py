@@ -25,6 +25,8 @@ MANIFEST_KEYS = {k.replace("/wp-content/uploads/", "") for k in MANIFEST}
 SEO = json.loads((ROOT / "import/seo_live.json").read_text(encoding="utf-8"))
 ALT_FILE = ROOT / "scripts/alt-text.json"
 ALT = json.loads(ALT_FILE.read_text(encoding="utf-8")) if ALT_FILE.exists() else {}
+DESC_FILE = ROOT / "scripts/descriptions.json"
+DESC = json.loads(DESC_FILE.read_text(encoding="utf-8")) if DESC_FILE.exists() else {}  # hand-written meta descriptions
 STALE_SLUGS = {"starta-eget-sparande": "borja-investera-vagen-till-rikedom", "kopa-guld-en-guide": "investera-i-guld"}
 
 # ---------------------------------------------------------------- XML
@@ -595,7 +597,7 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_date"]):
     author = re.sub(r"^Av\s+", "", live.get("author") or "") or it["creator"]
     if it["creator"] != author:
         report["author_differs_xml_vs_live"].append((slug, it["creator"], author))
-    desc = htmllib.unescape(live.get("desc") or it["meta"].get("_yoast_wpseo_metadesc") or "")
+    desc = DESC.get(slug) or htmllib.unescape(live.get("desc") or it["meta"].get("_yoast_wpseo_metadesc") or "")
     if not desc:
         report["no_description"].append(slug)
     prim = CAT_ID.get(it["meta"].get("_yoast_wpseo_primary_category", ""), None)
@@ -641,7 +643,7 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_name"]):
     live = SEO.get(slug, {})
     c = it["content"]
     layout, cat, tag = PAGE_LAYOUT.get(slug, ("default", None, None))
-    d = {"title": htmllib.unescape(it["title"]).strip(), "description": htmllib.unescape(live.get("desc") or "").strip(),
+    d = {"title": htmllib.unescape(it["title"]).strip(), "description": DESC.get(slug) or htmllib.unescape(live.get("desc") or "").strip(),
          "template": layout, "category": cat, "tag": tag, "wpId": int(it["post_id"]),
          "seoTitle": resolve_title(slug, htmllib.unescape(it["title"]).strip()),
          "updatedDate": iso(it["post_modified_gmt"])}

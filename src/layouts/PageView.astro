@@ -87,7 +87,7 @@ const heading = d.template === 'landing' ? (d.heading ?? d.title) : d.title;
       </p>
     )}
 
-    <div class:list={['page-body', { 'page-body--narrow': d.template !== 'landing' }]} data-pagefind-body={d.template === 'default' || d.template === 'calculator' ? '' : undefined}>
+    <div class:list={['page-body', { 'page-body--narrow': d.template !== 'landing' }]} data-pagefind-body={(d.template === 'default' || d.template === 'calculator') && !d.draft ? '' : undefined}>
       <div class:list={['prose', { 'landing__intro': d.template === 'landing' }]}>
         <Content components={mdxComponents} />
       </div>
