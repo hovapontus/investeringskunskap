@@ -1,0 +1,71 @@
+﻿type,slug,title,date,status,categories
+page,hem,Hem,2021-11-09 10:48:56,publish,
+page,aktier,Aktier,2022-01-06 11:00:39,publish,
+page,fonder,Fonder,2022-01-06 17:28:37,publish,
+page,kryptovaluta,Kryptovaluta,2022-01-06 17:33:59,publish,
+page,nyborjarguider,Nybörjarguider,2022-01-08 12:03:23,publish,
+page,privatekonomi,Privatekonomi,2022-01-08 12:10:21,publish,
+page,senaste-inlaggen,Senaste Inläggen,2022-01-12 15:50:36,publish,
+page,guld-och-ravaror,Guld och Råvaror,2022-09-17 16:47:38,publish,
+page,samarbetspartners,Samarbetspartners,2022-09-20 17:15:36,publish,
+page,alternativa-investeringar,Alternativa investeringar,2022-09-23 23:05:52,publish,
+page,tips,Tips,2022-09-27 16:24:49,publish,
+page,integritetspolicy,Integritetspolicy,2022-10-27 15:12:24,publish,
+page,ranta-pa-ranta-kalkylator,Ränta-på-ränta kalkylator,2023-02-05 12:25:28,publish,
+post,borja-investera-vagen-till-rikedom,Börja investera - vägen till rikedom,2022-01-06 17:59:07,publish,Aktier|Fonder
+post,pengamaskin-sa-bygger-du-en-utdelningsportfolj-och-blir-rik,Pengamaskin - Så bygger du en utdelningsportfölj och blir rik,2022-01-08 16:25:15,publish,Aktier
+post,kryptovalutor-och-blockkedjor-en-grundlig-genomgang-om-bitcoins-framfart,Kryptovalutor och Blockkedjor - Allt du behöver veta om Bitcoin,2022-01-08 19:18:34,publish,Krypto
+post,vad-ar-en-nft-vad-du-maste-veta,Vad är en NFT - Vad du måste veta,2022-01-11 16:45:34,publish,Krypto|NFT's
+post,vilken-el-ar-bast-till-din-fastighet,Vilken el är bäst till din fastighet,2022-01-12 18:06:41,publish,Privatekonomi
+post,allt-du-behover-veta-om-ditt-fondsparande,Allt Du Behöver Veta Om Ditt Fondsparande 2023 ,2022-01-25 17:58:54,publish,Fonder
+post,vad-du-maste-gora-for-att-spara-pengar-2022,Vad Du Måste Göra För Att Spara Pengar 2024,2022-08-18 15:35:44,publish,Privatekonomi|Spara Pengar
+post,en-portfolj-for-samre-tider,Konjuktursäkra dina pengar - En portfölj för sämre tider,2022-08-22 14:18:40,publish,Privatekonomi|Spara Pengar
+post,fixa-lagre-ranta-med-anyfin,Fixa lägre ränta med Anyfin,2022-09-09 15:14:47,publish,Privatekonomi|Spara Pengar
+post,en-recension-om-kameo-2022,En recension om Kameo 2023,2022-09-09 16:31:37,publish,Alternativa Investeringar|Privatekonomi|Spara Pengar
+post,hur-viktigt-ar-det-att-ha-flera-inkomstkallor,Hur viktigt är det att ha flera inkomstkällor?,2022-09-13 16:02:09,publish,Alternativa Investeringar|Privatekonomi|Spara Pengar
+post,sa-paverkar-ett-regeringsskifte-din-ekonomi,Så påverkar ett regeringsskifte din ekonomi,2022-09-14 17:21:50,publish,Privatekonomi
+post,rocker-kortet-som-tjanar-pengar-ett-omdome,Rocker - Kortet som tjänar pengar (Ett omdöme),2022-09-16 17:49:39,publish,Privatekonomi|Spara Pengar
+post,rarewine-invest-tjana-pengar-pa-vin,RareWine Invest - Investera i vin (Omdöme 2024),2022-09-23 23:09:54,publish,Alternativa Investeringar
+post,finanspoddar-for-att-bli-en-lyckad-investerare,Fantastiska ekonomipoddar för att bli en bättre investerare,2022-09-27 16:27:38,publish,Tips
+post,tradingview-recension-omdome-2022,TradingView - recension & omdöme 2024,2022-10-03 16:28:49,publish,Aktier|Alternativa Investeringar|Krypto
+post,recension-omdome-av-savelend-2022,Upptäck Savelend 2024: Din Biljett till Framtida Framgång!,2022-10-11 18:15:16,publish,Alternativa Investeringar|Privatekonomi|Spara Pengar
+post,kostnader-forenliga-med-en-begravning,Kostnader förenliga med en begravning,2022-10-14 12:26:53,publish,Privatekonomi
+post,hedgefondforvaltare-och-kanda-investerare-deras-kop-2022,Hedgefondförvaltare och kända investerare - Deras köp 2022-2024,2022-10-14 18:07:18,publish,Aktier|Fonder
+post,fackforbund-ska-man-vara-med-i-facket,Fackförbund - Ska man vara med i facket?,2022-10-30 00:39:36,publish,Privatekonomi
+post,vad-ar-fire-en-guide-for-att-bli-ekonomiskt-fri,Vad är FIRE? - En guide för att bli ekonomiskt fri,2022-11-03 22:50:37,publish,Aktier|Privatekonomi|Spara Pengar
+post,finanstwitter-bli-inspirerad-av-andra,Finanstwitter - Bli inspirerad av andra,2022-11-04 15:00:49,publish,Tips
+post,att-jamfora-elavtal-och-elpriser,Att jämföra elavtal och elpriser,2022-11-07 18:14:49,publish,Tips
+post,trine-recension-om-investering-i-solenergi,Trine - Recension om investering i solenergi,2022-11-13 19:02:53,publish,Alternativa Investeringar
+post,ftx-fran-en-av-varldens-storsta-kryptoborser-till-total-kollaps,FTX - Från en av världens största kryptobörser till total kollaps,2022-11-18 16:40:01,publish,Krypto
+post,hur-ska-man-investera-100-000-kr,Hur ska man investera 100 000 kr? - Ett exempel,2022-11-23 18:24:53,publish,Aktier|Fonder
+post,10-basta-tipsen-for-att-bli-ekonomiskt-oberoende,10 bästa tipsen för att bli ekonomiskt oberoende,2022-12-05 15:46:10,publish,Privatekonomi|Spara Pengar
+post,teslas-historia-och-framtid-en-djupdykning,Teslas historia och framtid: en djupdykning,2022-12-10 17:04:50,publish,Aktier
+post,tips-pa-utdelningsaktier-det-har-ar-dividend-knights,Utdelningsaktier - Detta är Dividend Knights,2022-12-23 21:48:03,publish,Aktier
+post,investera-i-guld,Investera i guld - En guide,2022-12-31 15:47:01,publish,Alternativa Investeringar
+post,vi-finns-nu-pa-borskollen,Vi finns nu på Börskollen,2023-01-07 16:46:37,publish,Aktier
+post,hur-stor-buffert-ska-man-ha-som-husagare,Hur stor buffert ska man ha som husägare,2023-01-12 18:14:32,publish,Privatekonomi|Spara Pengar
+post,norska-utdelningsaktier,Norska utdelningsaktier,2023-01-17 19:11:03,publish,Aktier
+post,nordnet-one-omdome,Nordnet One | Omdöme,2023-01-21 18:30:16,publish,Fonder
+post,varldens-basta-investerare,Hemligheter från världens mest framgångsrika investerare,2023-01-29 18:38:30,publish,Aktier
+post,kanadensiska-utdelningsaktier,Kanadensiska utdelningsaktier,2023-02-03 19:12:16,publish,Aktier
+post,investera-i-forsvarsaktier,Investera i försvarsaktier,2023-02-12 19:16:10,publish,Aktier
+post,aktieinvest-omdome,Aktieinvest omdöme,2023-03-06 18:33:36,publish,Aktier|Fonder
+post,investera-i-indexfonder,Investera i indexfonder,2023-03-13 16:54:55,publish,Fonder|Privatekonomi|Spara Pengar
+post,investera-i-rymden-rymdaktier-att-kanna-till,Investera i rymden - Rymdaktier att känna till,2023-03-22 13:15:12,publish,Aktier|Fonder
+post,europeiska-investmentbolag,Europeiska investmentbolag,2023-04-22 15:23:31,publish,Aktier|Alternativa Investeringar|Fonder
+post,finska-utdelningsaktier,Finska utdelningsaktier,2023-05-02 17:05:47,publish,Aktier
+post,investeringsmojligheter-i-tillvaxtmarknader,Investeringsmöjligheter i tillväxtmarknader,2023-06-22 07:41:10,publish,Aktier
+post,hur-du-kommer-igang-med-ett-barnsparande,Hur du kommer igång med ett barnsparande,2023-07-12 14:42:08,publish,Aktier|Fonder|Privatekonomi|Spara Pengar
+post,basta-fonderna-2023,Bästa fonderna 2024,2023-09-17 17:29:08,publish,Fonder|Privatekonomi|Spara Pengar
+post,investera-i-halvledarbolag,Investera i halvledarbolag,2023-10-04 14:42:57,publish,Aktier
+post,basta-etferna,Bästa ETF:erna 2024,2023-10-16 08:26:32,publish,Aktier|Alternativa Investeringar|Fonder|Okategoriserat
+post,13-smarta-satt-att-spara-pengar-som-student,13 smarta sätt att spara pengar som student,2023-11-18 16:24:41,publish,Aktier|Privatekonomi|Spara Pengar
+post,ai-investeringar,AI-Investeringar: En Guide till Att Välja de Bästa AI-Aktierna 2024,2023-11-22 20:25:22,publish,Aktier
+post,borsaret-2023-vinnare-och-forlorare,Börsåret 2023: Vinnare och Förlorare,2023-12-16 15:02:06,publish,Aktier|Krypto
+post,avanza-auto-bra-eller-daligt-omdome,Avanza Auto - Bra eller dåligt? (Omdöme),2023-12-21 16:45:57,publish,Aktier|Fonder
+post,komplett-guide-olika-satt-att-investera-och-kopa-bitcoin,Komplett Guide: Olika Sätt att Investera och köpa bitcoin,2024-01-17 15:12:16,publish,Alternativa Investeringar|Krypto
+post,basta-sparrantan-just-nu-jamfor-sparkonton-och-sparrantor,Bästa sparräntan just nu - Jämför sparkonton och sparräntor,2024-01-26 14:19:37,publish,Spara Pengar
+post,basta-aktiebockerna-att-lasa,Bästa aktieböckerna att läsa,2024-02-03 11:29:57,publish,Tips
+post,ekonomiska-vallgravar-en-nyckel-till-framgangsrika-investeringar,Ekonomiska vallgravar: En nyckel till framgångsrika investeringar,2024-10-16 16:19:45,publish,Aktier
+post,sa-gor-du-en-bankoverforing-steg-for-steg,Så gör du en banköverföring – steg för steg,2026-01-19 21:28:26,publish,Privatekonomi
+post,hur-du-valjer-ratt-konto-for-ditt-sparande-2026,Hur du väljer rätt konto för ditt sparande 2026,2026-07-04 20:49:33,publish,Privatekonomi

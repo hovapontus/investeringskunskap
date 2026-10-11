@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env
+# WordPress export contains author emails; live snapshots are regenerable
+import/*.xml
+import/live/
