@@ -1,0 +1,76 @@
+---
+interface Props {
+  pros: string[];
+  cons: string[];
+  prosTitle?: string;
+  consTitle?: string;
+}
+const { pros, cons, prosTitle = 'Fördelar', consTitle = 'Nackdelar' } = Astro.props;
+---
+
+<div class="proscons">
+  <div class="proscons__col proscons__col--pros">
+    <p class="proscons__title">{prosTitle}</p>
+    <ul>{pros.map((t) => <li>{t}</li>)}</ul>
+  </div>
+  <div class="proscons__col proscons__col--cons">
+    <p class="proscons__title">{consTitle}</p>
+    <ul>{cons.map((t) => <li>{t}</li>)}</ul>
+  </div>
+</div>
+
+<style>
+  .proscons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.8rem 0;
+  }
+  @media (max-width: 640px) {
+    .proscons {
+      grid-template-columns: 1fr;
+    }
+  }
+  .proscons__col {
+    padding: 1rem 1.1rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    border-top-width: 4px;
+  }
+  .proscons__col--pros {
+    border-top-color: #2e9e4f;
+    background: #f3faf5;
+  }
+  .proscons__col--cons {
+    border-top-color: #cf3a3a;
+    background: #fdf4f4;
+  }
+  .proscons__title {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0.4rem 0;
+  }
+  .proscons__col--pros li::before {
+    content: '✓';
+    color: #2e9e4f;
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .proscons__col--cons li::before {
+    content: '✕';
+    color: #cf3a3a;
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+</style>

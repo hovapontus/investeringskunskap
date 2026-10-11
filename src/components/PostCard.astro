@@ -1,0 +1,88 @@
+---
+// Grid card (3-up archive grid, home page latest posts).
+import PostImage from './PostImage.astro';
+import { categoryName, categoryUrl, postUrl, type Post } from '../lib/content';
+import { formatDate } from '../lib/format';
+
+interface Props {
+  post: Post;
+  eager?: boolean;
+}
+const { post, eager = false } = Astro.props;
+const d = post.data;
+const cat = d.primaryCategory ?? d.categories[0];
+const url = postUrl(post);
+---
+
+<article class="card">
+  <div class="card__media">
+    <a href={url} tabindex="-1" aria-hidden="true">
+      <PostImage src={d.image} width={720} height={360} sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw" eager={eager} />
+    </a>
+    {cat && <a class="chip card__chip" href={categoryUrl(cat)}>{categoryName(cat)}</a>}
+  </div>
+  <div class="card__body">
+    <h3 class="card__title"><a href={url}>{d.title}</a></h3>
+    <p class="meta card__meta">Av <strong>{d.author}</strong> · <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate)}</time></p>
+    {d.description && <p class="card__excerpt">{d.description}</p>}
+  </div>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .card__media {
+    position: relative;
+    background: var(--soft);
+  }
+  .card__media :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+  .card__chip {
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+  }
+  .card__body {
+    padding: 1.1rem 1.25rem 1.4rem;
+  }
+  .card__title {
+    margin: 0 0 0.45rem;
+    font-family: var(--font-title);
+    font-size: 1.3125rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .card__title a {
+    color: var(--heading);
+    text-decoration: none;
+  }
+  .card__title a:hover {
+    color: var(--accent);
+  }
+  .card__meta {
+    margin: 0 0 0.7rem;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    letter-spacing: 0.02em;
+  }
+  .card__excerpt {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

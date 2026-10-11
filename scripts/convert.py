@@ -179,6 +179,11 @@ def inline(node, ctx, in_heading=False):
 
 
 # ---------------------------------------------------------------- components
+def jsx_s(v):
+    """String prop as a JS expression: attr={"..."} (JSX attribute strings have no escape sequences)."""
+    return "{" + json.dumps(v, ensure_ascii=False) + "}"
+
+
 def jsx_str(v):
     return json.dumps(v, ensure_ascii=False)
 
@@ -198,15 +203,15 @@ def figure(img, ctx, caption="", href=None, caption_href=None):
             report["alt_filled"].append((key, ctx.slug))
     ctx.images.append(key)
     w = img.get("width") or style_px(img, "width")
-    props = f"src={jsx_str(key)} alt={jsx_str(alt)}"
+    props = f"src={jsx_s(key)} alt={jsx_s(alt)}"
     if caption:
-        props += f" caption={jsx_str(caption)}"
+        props += f" caption={jsx_s(caption)}"
         if caption_href and norm_href(caption_href):
-            props += f" captionHref={jsx_str(norm_href(caption_href))}"
+            props += f" captionHref={jsx_s(norm_href(caption_href))}"
     if w and str(w).isdigit():
         props += f" displayWidth={{{w}}}"
     if href and not href.startswith("/wp-content") and norm_href(href):
-        props += f" href={jsx_str(norm_href(href))}"
+        props += f" href={jsx_s(norm_href(href))}"
     return f"<Figure {props} />"
 
 
@@ -367,7 +372,7 @@ def block(el, ctx, depth):
             for a in el.find_all("a"):
                 href = (a.get("href") or "").replace("&amp;", "&")
                 m = re.search(r"background-color:\s*(#[0-9a-fA-F]{3,8})", a.get("style", ""))
-                yield f'<CtaButton href={jsx_str(norm_href(href))} label={jsx_str(a.get_text(" ", strip=True))} color={jsx_str(m.group(1) if m else "#3373dc")} />'
+                yield f'<CtaButton href={jsx_s(norm_href(href))} label={jsx_s(a.get_text(" ", strip=True))} color={jsx_s(m.group(1) if m else "#3373dc")} />'
             return
         if "wp-block-embed" in c:
             yield from fig(el, ctx, depth)
@@ -416,8 +421,17 @@ def embed(src, el, ctx):
     m = re.search(r"(?:youtube\.com/(?:watch\?v=|embed/)|youtu\.be/)([\w-]{11})", src)
     if m:
         return f'<YouTube id="{m.group(1)}" />'
+    props = f"src={jsx_s(src.replace('&amp;', '&'))}"
     h = el.get("height")
-    return f"<Embed src={jsx_str(src.replace('&amp;', '&'))} title={jsx_str('Inbäddat innehåll')}" + (f" height={{{h}}}" if h and str(h).isdigit() else "") + " />"
+    wrap = el.find_parent("div")
+    pt = re.search(r"padding-top:\s*([\d.]+)%", wrap.get("style", "")) if wrap else None
+    if pt and float(pt.group(1)) > 0:  # responsive wrapper from Canva: padding-top = height/width
+        props += f" ratio={{{round(100 / float(pt.group(1)), 4)}}}"
+    elif h and str(h).isdigit():
+        props += f" height={{{h}}}"
+    elif style_px(el, "height"):
+        props += f" height={{{style_px(el, 'height')}}}"
+    return f"<Embed {props} />"
 
 
 def fig(el, ctx, depth):
@@ -472,7 +486,7 @@ def pros_cons(el):
         return [li.get_text(" ", strip=True) for li in box.find_all("li")], title
     pros, pt = items(".affiliate-props-list")
     cons, ct = items(".affiliate-cons-list")
-    return f"<ProsCons pros={{{jsx_str(pros)}}} cons={{{jsx_str(cons)}}} prosTitle={jsx_str(pt or 'Fördelar')} consTitle={jsx_str(ct or 'Nackdelar')} />"
+    return f"<ProsCons pros={{{jsx_str(pros)}}} cons={{{jsx_str(cons)}}} prosTitle={jsx_s(pt or 'Fördelar')} consTitle={jsx_s(ct or 'Nackdelar')} />"
 
 
 # ---------------------------------------------------------------- shortcode / block prep
@@ -537,10 +551,22 @@ def iso(s):
     return s.replace(" ", "T") + "Z" if s and not s.startswith("0000") else None
 
 
+def featured_alt(it):
+    tid = it["meta"].get("_thumbnail_id")
+    att = ITEMS.get(tid) if tid else None
+    return (att["meta"].get("_wp_attachment_image_alt") or "").strip() if att else ""
+
+
 def featured(it):
     tid = it["meta"].get("_thumbnail_id")
     att = ITEMS.get(tid) if tid else None
-    return upload_key(att["attachment_url"]) if att else None
+    key = upload_key(att["attachment_url"]) if att else None
+    if key and key.lower().endswith(".pdf"):  # WordPress shows the generated preview image of a PDF attachment
+        preview = key[:-4] + "-pdf.jpg"
+        if preview in MANIFEST_KEYS:
+            report["featured_pdf_replaced_with_preview"].append((key, preview))
+            return preview
+    return key
 
 
 def resolve_title(slug, wp_title):
@@ -574,6 +600,8 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_date"]):
         report["no_description"].append(slug)
     prim = CAT_ID.get(it["meta"].get("_yoast_wpseo_primary_category", ""), None)
     cats = [s for s, _ in it["cats"]]
+    if prim == "okategoriserat" and len(cats) > 1:  # "Uncategorized" makes a poor breadcrumb/primary category
+        prim = next(c for c in cats if c != "okategoriserat")
     d = {
         "title": htmllib.unescape(it["title"]).replace("\xa0", " ").strip(),
         "description": desc.strip(),
@@ -584,6 +612,7 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_date"]):
         "primaryCategory": prim if prim in cats else (cats[0] if cats else None),
         "tags": [s for s, _ in it["tags"]],
         "image": featured(it),
+        "imageAlt": featured_alt(it) or htmllib.unescape(it["title"]).replace(" ", " ").strip(),
         "seoTitle": resolve_title(slug, htmllib.unescape(it["title"]).replace("\xa0", " ").strip()),
         "focusKeyword": it["meta"].get("_yoast_wpseo_focuskw") or None,
         "wpId": int(it["post_id"]),
@@ -613,7 +642,7 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_name"]):
     c = it["content"]
     layout, cat, tag = PAGE_LAYOUT.get(slug, ("default", None, None))
     d = {"title": htmllib.unescape(it["title"]).strip(), "description": htmllib.unescape(live.get("desc") or "").strip(),
-         "layout": layout, "category": cat, "tag": tag, "wpId": int(it["post_id"]),
+         "template": layout, "category": cat, "tag": tag, "wpId": int(it["post_id"]),
          "seoTitle": resolve_title(slug, htmllib.unescape(it["title"]).strip()),
          "updatedDate": iso(it["post_modified_gmt"])}
     if layout in ("landing", "home", "latest") or slug in ("samarbetspartners",):
@@ -629,13 +658,29 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_name"]):
     if layout in ("landing", "home", "latest"):
         c2 = re.sub(r"<h1[^>]*>.*?</h1>", "", c2, flags=re.S)
     if slug == "ranta-pa-ranta-kalkylator":
-        d["layout"] = "calculator"
+        d["template"] = "calculator"
     body, ctx = convert_body(c2, slug)
     (OUT_PAGES / f"{slug}.mdx").write_text(front_matter({k: v for k, v in d.items() if v is not None}) + body, encoding="utf-8")
 
 # ---------------------------------------------------------------- data + report
 (ROOT / "src/data").mkdir(parents=True, exist_ok=True)
 (ROOT / "src/data/affiliate-boxes.json").write_text(json.dumps(BOXES, indent=1, ensure_ascii=False), encoding="utf-8")
+# taxonomy names/counts for the site (categories, tags)
+cat_count, tag_count = collections.Counter(), collections.Counter()
+for it in ITEMS.values():
+    if it["post_type"] == "post" and it["status"] == "publish":
+        cat_count.update(s_ for s_, _ in it["cats"])
+        tag_count.update(s_ for s_, _ in it["tags"])
+tax = {"categories": {}, "tags": {}}
+for c in ch:
+    if c.tag.endswith("}category"):
+        slug = txt(c, "category_nicename")
+        tax["categories"][slug] = {"name": txt(c, "cat_name"), "parent": txt(c, "category_parent") or None, "count": cat_count[slug]}
+    elif c.tag.endswith("}tag"):
+        slug = txt(c, "tag_slug")
+        tax["tags"][slug] = {"name": txt(c, "tag_name"), "count": tag_count[slug]}
+(ROOT / "src/data/taxonomy.json").write_text(json.dumps(tax, indent=1, ensure_ascii=False), encoding="utf-8")
+
 rep = {k: v for k, v in report.items()}
 rep["posts_converted"] = n_posts
 rep["affiliate_boxes"] = len(BOXES)

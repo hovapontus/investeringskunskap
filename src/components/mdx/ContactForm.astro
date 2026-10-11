@@ -1,0 +1,176 @@
+---
+// Contact form posting to Formspree. Works without JavaScript (normal POST); with JavaScript it submits via fetch.
+// TODO: replace FORM_ID_HERE with the real Formspree form id.
+const ACTION = 'https://formspree.io/f/FORM_ID_HERE';
+---
+
+<form class="contact" action={ACTION} method="POST" data-action={ACTION} novalidate>
+  <div class="contact__field">
+    <label for="contact-name">Namn</label>
+    <input id="contact-name" name="name" type="text" autocomplete="name" required />
+    <p class="contact__err" data-for="name" hidden></p>
+  </div>
+  <div class="contact__field">
+    <label for="contact-email">E-postadress</label>
+    <input id="contact-email" name="email" type="email" autocomplete="email" required />
+    <p class="contact__err" data-for="email" hidden></p>
+  </div>
+  <div class="contact__field">
+    <label for="contact-message">Meddelande</label>
+    <textarea id="contact-message" name="message" rows="6" required></textarea>
+    <p class="contact__err" data-for="message" hidden></p>
+  </div>
+
+  <!-- Honeypot: hidden from people, filled in by bots. Formspree discards submissions where _gotcha has a value. -->
+  <div class="contact__trap" aria-hidden="true">
+    <label for="contact-website">Lämna det här fältet tomt</label>
+    <input id="contact-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+  </div>
+  <input type="hidden" name="_subject" value="Nytt meddelande från investeringskunskap.se" />
+
+  <button type="submit" class="contact__btn">Skicka meddelande</button>
+  <p class="contact__status" role="status" aria-live="polite" tabindex="-1"></p>
+</form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('form.contact');
+  if (form) {
+    const status = form.querySelector<HTMLElement>('.contact__status')!;
+    const button = form.querySelector<HTMLButtonElement>('.contact__btn')!;
+    const msg = {
+      required: 'Fältet måste fyllas i.',
+      email: 'Ange en giltig e-postadress.',
+      sending: 'Skickar…',
+      sent: 'Tack! Ditt meddelande är skickat. Vi återkommer så snart vi kan.',
+      error: 'Något gick fel och meddelandet skickades inte. Försök igen om en stund.',
+      network: 'Det gick inte att nå servern. Kontrollera din anslutning och försök igen.',
+      notConfigured: 'Kontaktformuläret är inte aktiverat ännu.',
+    };
+
+    const setError = (name: string, text: string | null) => {
+      const slot = form.querySelector<HTMLElement>(`.contact__err[data-for="${name}"]`)!;
+      const field = form.elements.namedItem(name) as HTMLInputElement;
+      slot.hidden = !text;
+      slot.textContent = text ?? '';
+      field.toggleAttribute('aria-invalid', !!text);
+      if (text) field.setAttribute('aria-describedby', slot.id ||= `err-${name}`);
+      else field.removeAttribute('aria-describedby');
+    };
+
+    function validate(): boolean {
+      let firstBad: HTMLInputElement | null = null;
+      for (const name of ['name', 'email', 'message']) {
+        const el = form!.elements.namedItem(name) as HTMLInputElement;
+        const value = el.value.trim();
+        let err: string | null = null;
+        if (!value) err = msg.required;
+        else if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) err = msg.email;
+        setError(name, err);
+        if (err && !firstBad) firstBad = el;
+      }
+      firstBad?.focus();
+      return !firstBad;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.classList.remove('is-error', 'is-ok');
+      if (!validate()) return;
+      const action = form.dataset.action ?? form.action;
+      if (action.includes('FORM_ID_HERE')) {
+        status.textContent = msg.notConfigured;
+        status.classList.add('is-error');
+        return;
+      }
+      button.disabled = true;
+      status.textContent = msg.sending;
+      try {
+        const res = await fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.reset();
+          status.textContent = msg.sent;
+          status.classList.add('is-ok');
+        } else {
+          status.textContent = msg.error;
+          status.classList.add('is-error');
+        }
+      } catch {
+        status.textContent = msg.network;
+        status.classList.add('is-error');
+      } finally {
+        button.disabled = false;
+        status.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  .contact {
+    max-width: 36rem;
+    margin: 1.5rem 0;
+  }
+  .contact__field {
+    margin-bottom: 1rem;
+  }
+  .contact label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .contact input[type='text'],
+  .contact input[type='email'],
+  .contact textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.55rem 0.75rem;
+    font: inherit;
+    border: 1px solid #b9bfc7;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .contact [aria-invalid] {
+    border-color: #a12020;
+  }
+  .contact__err {
+    margin: 0.3rem 0 0;
+    color: #a12020;
+    font-size: 0.875rem;
+  }
+  .contact__trap {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .contact__btn {
+    min-height: 44px;
+    padding: 0.6rem 1.6rem;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: var(--navy);
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .contact__btn:disabled {
+    opacity: 0.6;
+    cursor: progress;
+  }
+  .contact__status {
+    margin: 1rem 0 0;
+    font-weight: 700;
+  }
+  .contact__status.is-ok {
+    color: #1d7a3a;
+  }
+  .contact__status.is-error {
+    color: #a12020;
+  }
+</style>

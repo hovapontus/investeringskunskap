@@ -1,0 +1,75 @@
+---
+// Landing-page list row: title, byline, thumbnail left, excerpt and "Läs mer" button.
+import PostImage from './PostImage.astro';
+import { postUrl, type Post } from '../lib/content';
+import { formatDate } from '../lib/format';
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const d = post.data;
+const url = postUrl(post);
+---
+
+<article class="row">
+  <h2 class="row__title"><a href={url}>{d.title}</a></h2>
+  <p class="meta">Av <strong>{d.author}</strong> · <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate)}</time></p>
+  <div class="row__body">
+    <a class="row__img" href={url} tabindex="-1" aria-hidden="true">
+      <PostImage src={d.image} width={560} height={280} sizes="(min-width: 700px) 280px, 100vw" />
+    </a>
+    <div>
+      <p class="row__excerpt">{d.description}</p>
+      <a class="btn-outline" href={url} aria-label={`Läs mer: ${d.title}`}>Läs mer</a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .row {
+    padding: 1.6rem 0 1.9rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .row__title {
+    margin: 0 0 0.3rem;
+    font-family: var(--font-title);
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 1.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .row__title a {
+    color: var(--heading);
+    text-decoration: none;
+  }
+  .row__title a:hover {
+    color: var(--accent);
+  }
+  .meta {
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+  }
+  .row__body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .row__img :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+  .row__excerpt {
+    margin: 0 0 1rem;
+  }
+  @media (max-width: 699px) {
+    .row__body {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import { render, getCollection } from 'astro:content';
+import PostView from '../layouts/PostView.astro';
+import PageView from '../layouts/PageView.astro';
+
+// Posts and pages share the root namespace (/<slug>/), exactly like the old WordPress permalinks.
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const pages = (await getCollection('pages')).filter((p) => p.data.template !== 'home'); // "hem" -> redirect to /
+  return [
+    ...posts.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'post' as const, entry } })),
+    ...pages.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'page' as const, entry } })),
+  ];
+}
+
+const { kind, entry } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+
+{kind === 'post' ? <PostView post={entry as any} Content={Content} headings={headings} /> : <PageView page={entry as any} Content={Content} />}

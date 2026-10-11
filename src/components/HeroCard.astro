@@ -1,0 +1,86 @@
+---
+// Large image card with the category chip and title overlaid (archive heroes, home page hero).
+import PostImage from './PostImage.astro';
+import { categoryName, categoryUrl, postUrl, type Post } from '../lib/content';
+
+interface Props {
+  post: Post;
+  tall?: boolean;
+  eager?: boolean;
+}
+const { post, tall = false, eager = false } = Astro.props;
+const d = post.data;
+const cat = d.primaryCategory ?? d.categories[0];
+---
+
+<article class:list={['hero', { 'hero--tall': tall }]}>
+  <PostImage src={d.image} width={tall ? 1140 : 1130} height={tall ? 860 : 840} sizes={tall ? '(min-width: 1170px) 1140px, 100vw' : '(min-width: 1024px) 565px, 100vw'} eager={eager} class="hero__img" />
+  <div class="hero__text">
+    {cat && <a class="chip" href={categoryUrl(cat)}>{categoryName(cat)}</a>}
+    <h2 class="hero__title"><a href={`/${post.id}/`}>{d.title}</a></h2>
+  </div>
+</article>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    background: #111;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero :global(.hero__img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgb(0 0 0 / 0.78) 0%, rgb(0 0 0 / 0.35) 45%, rgb(0 0 0 / 0) 75%);
+  }
+  .hero__text {
+    position: relative;
+    z-index: 1;
+    padding: 1.6rem 1.5rem;
+    max-width: 44rem;
+  }
+  .hero__title {
+    margin: 0.55rem 0 0;
+    font-family: var(--font-title);
+    font-size: clamp(1.45rem, 1.1rem + 1.2vw, 1.875rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 6px rgb(0 0 0 / 0.45);
+  }
+  .hero--tall {
+    min-height: 430px;
+  }
+  .hero--tall .hero__title {
+    font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
+  }
+  .hero__title a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .hero__title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero__text :global(.chip) {
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 640px) {
+    .hero--tall {
+      min-height: 320px;
+    }
+  }
+</style>

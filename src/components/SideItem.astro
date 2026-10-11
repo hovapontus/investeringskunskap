@@ -1,0 +1,56 @@
+---
+// Compact item with thumbnail (related posts in the sidebar / below the article).
+import PostImage from './PostImage.astro';
+import { postUrl, type Post } from '../lib/content';
+import { formatDate } from '../lib/format';
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const url = postUrl(post);
+---
+
+<article class="side">
+  <a class="side__img" href={url} tabindex="-1" aria-hidden="true">
+    <PostImage src={post.data.image} width={240} height={180} sizes="120px" />
+  </a>
+  <div>
+    <h3 class="side__title"><a href={url}>{post.data.title}</a></h3>
+    <p class="meta side__meta"><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time></p>
+  </div>
+</article>
+
+<style>
+  .side {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0.9rem;
+    align-items: start;
+  }
+  .side__img :global(img),
+  .side__img :global(.no-image) {
+    display: block;
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+  }
+  .side__title {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-title);
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .side__title a {
+    color: var(--heading);
+    text-decoration: none;
+  }
+  .side__title a:hover {
+    color: var(--accent);
+  }
+  .side__meta {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+  }
+</style>

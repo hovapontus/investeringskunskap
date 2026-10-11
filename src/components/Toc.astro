@@ -1,0 +1,43 @@
+---
+// Table of contents built from the article's h2 headings (replaces the WordPress TOC plugins).
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+const items = Astro.props.headings.filter((h) => h.depth === 2);
+---
+
+{
+  items.length >= 3 && (
+    <details class="toc" open>
+      <summary>Innehåll</summary>
+      <ol>
+        {items.map((h) => (
+          <li>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ol>
+    </details>
+  )
+}
+
+<style>
+  .toc {
+    margin: 1.6rem 0;
+    padding: 0.9rem 1.2rem;
+    background: var(--soft);
+    border: 1px solid var(--line);
+  }
+  summary {
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 32px;
+  }
+  ol {
+    margin: 0.6rem 0 0;
+    padding-left: 1.4rem;
+  }
+  li {
+    margin: 0.3rem 0;
+  }
+</style>

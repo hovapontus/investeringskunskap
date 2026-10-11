@@ -1,0 +1,202 @@
+---
+import { getImage } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Toc from '../components/Toc.astro';
+import Disclosure from '../components/Disclosure.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import SideItem from '../components/SideItem.astro';
+import PostImage from '../components/PostImage.astro';
+import { mdxComponents } from '../lib/mdx-components';
+import { allPosts, categoryName, categoryUrl, tagName, tagUrl, related, type Post } from '../lib/content';
+import { hasAffiliate } from '../lib/affiliate';
+import { getUpload } from '../lib/images';
+import { formatDate, initials } from '../lib/format';
+import { abs } from '../lib/site';
+import { blogPostingJsonLd, breadcrumbJsonLd } from '../lib/seo';
+
+interface Props {
+  post: Post;
+  Content: any;
+  headings: { depth: number; slug: string; text: string }[];
+}
+const { post, Content, headings } = Astro.props;
+const d = post.data;
+const path = `/${post.id}/`;
+const cat = d.primaryCategory ?? d.categories[0];
+const affiliate = hasAffiliate(post.body);
+const more = related(post, await allPosts(), 6);
+
+let ogImage: string | undefined;
+if (d.image) {
+  const img = await getImage({ src: await getUpload(d.image), width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+  ogImage = abs(img.src);
+}
+
+const crumbs = [{ name: 'Hem', path: '/' }, ...(cat ? [{ name: categoryName(cat), path: categoryUrl(cat) }] : []), { name: d.title, path }];
+const updated = d.updatedDate && d.updatedDate.getTime() - d.pubDate.getTime() > 86400000 ? d.updatedDate : null;
+---
+
+<BaseLayout
+  title={d.title}
+  fullTitle={d.seoTitle}
+  description={d.description}
+  path={path}
+  image={ogImage}
+  type="article"
+  noindex={d.noindex}
+  published={d.pubDate}
+  modified={d.updatedDate}
+  author={d.author}
+  section={cat ? categoryName(cat) : undefined}
+  jsonLd={[
+    blogPostingJsonLd({ path, title: d.title, description: d.description, image: ogImage, published: d.pubDate, modified: d.updatedDate, author: d.author }),
+    breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, path: c.path! }))),
+  ]}
+>
+  <div class="container post-layout">
+    <article class="post" data-pagefind-body>
+      {affiliate && <Disclosure />}
+      <Breadcrumbs items={crumbs} />
+      <h1 class="post__title">{d.title}</h1>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">{initials(d.author)}</span>
+        <p class="byline__text">
+          Av <strong data-pagefind-meta="author">{d.author}</strong>{' '}&mdash;{' '}
+          <time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate)}</time>
+          {updated && <>{' '}· Uppdaterad <time datetime={updated.toISOString()}>{formatDate(updated)}</time></>}
+          {d.categories.length > 0 && (
+            <>
+              {' '}· i{' '}
+              {d.categories.map((c, i) => (
+                <>
+                  {i > 0 ? ', ' : ''}<a href={categoryUrl(c)}>{categoryName(c)}</a>
+                </>
+              ))}
+            </>
+          )}
+        </p>
+      </div>
+
+      {d.image && <PostImage src={d.image} alt={d.imageAlt ?? ''} width={1500} height={750} sizes="(min-width: 1024px) 750px, 100vw" eager class="post__hero" />}
+
+      <ShareButtons path={path} title={d.title} />
+      <Toc headings={headings} />
+
+      <div class="prose">
+        <Content components={mdxComponents} />
+      </div>
+
+      {
+        d.tags.length > 0 && (
+          <p class="post__tags">
+            <span class="sr-only">Taggar:</span>
+            {d.tags.map((t) => (
+              <a href={tagUrl(t)} rel="tag">#{tagName(t)}</a>
+            ))}
+          </p>
+        )
+      }
+    </article>
+
+    <aside class="post-aside" aria-labelledby="related-title" data-pagefind-ignore>
+      <h2 id="related-title" class="post-aside__title">Du kanske också gillar detta</h2>
+      <div class="post-aside__list">
+        {more.map((p) => <SideItem post={p} />)}
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .post-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 750px) minmax(0, 1fr);
+    gap: 2.5rem 3rem;
+    align-items: start;
+  }
+  .post {
+    min-width: 0;
+  }
+  .post__title {
+    margin: 0 0 1rem;
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 1.2rem + 3vw, 2.625rem);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    color: #0a0a0a;
+  }
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.4rem;
+  }
+  .byline__avatar {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .byline__text {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .byline__text strong {
+    color: var(--ink);
+  }
+  .post :global(.post__hero) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+  .post__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    margin: 2.5rem 0 0;
+    font-size: 0.875rem;
+  }
+  .post__tags a {
+    padding: 0.35rem 0.6rem;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .post-aside {
+    position: sticky;
+    top: 1rem;
+    margin-top: 2.2rem;
+  }
+  .post-aside__title {
+    margin: 0 0 1.2rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  .post-aside__list {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (max-width: 1023px) {
+    .post-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .post-aside {
+      position: static;
+      margin-top: 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+  }
+</style>

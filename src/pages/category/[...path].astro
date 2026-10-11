@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroCard from '../../components/HeroCard.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { allPosts, categories, categoryName, categoryPath, categoryUrl, inCategory, pagePath, paginate } from '../../lib/content';
+import { SITE } from '../../lib/site';
+import { breadcrumbJsonLd } from '../../lib/seo';
+
+// /category/<slug>/, /category/<parent>/<slug>/ and .../page/<n>/ (WordPress-style, hierarchical)
+export async function getStaticPaths() {
+  const posts = await allPosts();
+  return Object.keys(categories).flatMap((slug) =>
+    paginate(inCategory(posts, slug), SITE.pageSize, SITE.categoryFirstPageSize).map((p) => ({
+      params: { path: categoryPath(slug) + (p.page === 1 ? '' : `/page/${p.page}`) },
+      props: { slug, ...p },
+    })),
+  );
+}
+
+const { slug, page, total, items } = Astro.props;
+const name = categoryName(slug);
+const base = categoryUrl(slug);
+const path = base + pagePath(page);
+const heroes = page === 1 ? items.slice(0, 2) : [];
+const grid = page === 1 ? items.slice(2) : items;
+const title = page === 1 ? name : `${name} – sida ${page}`;
+const parent = categories[slug]?.parent;
+const crumbs = [{ name: 'Hem', path: '/' }, ...(parent ? [{ name: categoryName(parent), path: categoryUrl(parent) }] : []), { name, path: base }];
+const description = `Alla inlägg i kategorin ${name} på Investeringskunskap.`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  prev={page > 1 ? base + pagePath(page - 1) : undefined}
+  next={page < total ? base + pagePath(page + 1) : undefined}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, path: c.path })))]}
+>
+  <div class="container">
+    {
+      heroes.length > 0 && (
+        <div class="heroes">
+          {heroes.map((p, i) => <HeroCard post={p} eager={i === 0} />)}
+        </div>
+      )
+    }
+    <header class="page-head archive-head">
+      <h1>{name}{page > 1 && <span class="archive-head__page"> – sida {page}</span>}</h1>
+    </header>
+    <div class="grid">
+      {grid.map((p) => <PostCard post={p} />)}
+    </div>
+    <Pagination base={base} current={page} total={total} />
+  </div>
+</BaseLayout>
+
+<style>
+  .heroes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 1.9rem;
+  }
+  .heroes :global(.hero) {
+    min-height: 420px;
+  }
+  .archive-head {
+    margin: 2.4rem 0 1.6rem;
+  }
+  .archive-head h1 {
+    font-family: var(--font-body);
+    font-size: clamp(1.9rem, 1.3rem + 2vw, 2.25rem);
+  }
+  .archive-head__page {
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  @media (max-width: 1023px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 700px) {
+    .heroes {
+      grid-template-columns: 1fr;
+    }
+    .heroes :global(.hero) {
+      min-height: 300px;
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

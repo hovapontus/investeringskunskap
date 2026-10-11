@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sök" description="Sök bland inläggen på Investeringskunskap." path="/sok/" noindex>
+  <div class="container">
+    <header class="page-head">
+      <h1>Sök</h1>
+    </header>
+    <form class="search-form" role="search" action="/sok/" method="get">
+      <label for="q" class="sr-only">Sökord</label>
+      <input id="q" name="q" type="search" autocomplete="off" autofocus />
+      <button type="submit">Sök</button>
+    </form>
+    <p id="status" role="status" aria-live="polite" class="meta"></p>
+    <ol id="results" class="results"></ol>
+    <noscript><p>Sökningen kräver JavaScript. Du kan i stället bläddra bland <a href="/senaste-inlaggen/">de senaste inläggen</a>.</p></noscript>
+  </div>
+</BaseLayout>
+
+<script>
+  // Client-side search over the Pagefind index that `npm run build` writes to /pagefind/.
+  const input = document.querySelector<HTMLInputElement>('#q')!;
+  const status = document.querySelector<HTMLElement>('#status')!;
+  const list = document.querySelector<HTMLElement>('#results')!;
+  const form = document.querySelector<HTMLFormElement>('.search-form')!;
+  let pagefind: any;
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+  async function load() {
+    if (pagefind) return pagefind;
+    try {
+      // Variable path so the bundler leaves the runtime-generated file alone.
+      const url = '/pagefind/pagefind.js';
+      pagefind = await import(/* @vite-ignore */ url);
+      await pagefind.init();
+    } catch {
+      pagefind = null;
+    }
+    return pagefind;
+  }
+
+  async function run(q: string) {
+    list.innerHTML = '';
+    if (!q.trim()) {
+      status.textContent = '';
+      return;
+    }
+    status.textContent = 'Söker…';
+    const pf = await load();
+    if (!pf) {
+      status.textContent = 'Sökningen är inte tillgänglig just nu. (Sökindexet skapas när sajten byggs med "npm run build".)';
+      return;
+    }
+    const res = await pf.search(q);
+    const items = await Promise.all(res.results.slice(0, 20).map((r: any) => r.data()));
+    status.textContent = items.length ? `${res.results.length} träffar för "${q}"` : `Inga träffar för "${q}".`;
+    list.innerHTML = items
+      .map(
+        (d: any) =>
+          `<li><h2><a href="${esc(d.url)}">${esc(d.meta?.title ?? d.url)}</a></h2><p>${d.excerpt}</p></li>`,
+      )
+      .join('');
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = input.value;
+    history.replaceState(null, '', q ? `?q=${encodeURIComponent(q)}` : location.pathname);
+    run(q);
+  });
+  const initial = new URLSearchParams(location.search).get('q') ?? '';
+  input.value = initial;
+  if (initial) run(initial);
+</script>
+
+<style>
+  .search-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 36rem;
+  }
+  .search-form input {
+    flex: 1;
+    min-height: 44px;
+    padding: 0 0.8rem;
+    font: inherit;
+    border: 1px solid #b9bfc7;
+  }
+  .search-form button {
+    min-height: 44px;
+    padding: 0 1.4rem;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: var(--navy);
+    border: 0;
+    cursor: pointer;
+  }
+  .results {
+    list-style: none;
+    margin: 1.2rem 0 0;
+    padding: 0;
+    max-width: 48rem;
+  }
+  .results :global(li) {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .results :global(h2) {
+    margin: 0 0 0.3rem;
+    font-size: 1.25rem;
+  }
+  .results :global(p) {
+    margin: 0;
+    color: #3d4348;
+  }
+  .results :global(mark) {
+    background: #fff1a8;
+  }
+</style>

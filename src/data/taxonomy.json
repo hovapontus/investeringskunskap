@@ -1,0 +1,119 @@
+{
+ "categories": {
+  "aktier": {
+   "name": "Aktier",
+   "parent": null,
+   "count": 26
+  },
+  "alternativa-investeringar": {
+   "name": "Alternativa Investeringar",
+   "parent": null,
+   "count": 10
+  },
+  "fonder": {
+   "name": "Fonder",
+   "parent": null,
+   "count": 13
+  },
+  "krypto": {
+   "name": "Krypto",
+   "parent": null,
+   "count": 6
+  },
+  "nfts": {
+   "name": "NFT's",
+   "parent": "krypto",
+   "count": 1
+  },
+  "okategoriserat": {
+   "name": "Okategoriserat",
+   "parent": null,
+   "count": 1
+  },
+  "privatekonomi": {
+   "name": "Privatekonomi",
+   "parent": null,
+   "count": 20
+  },
+  "spara-pengar": {
+   "name": "Spara Pengar",
+   "parent": null,
+   "count": 15
+  },
+  "tips": {
+   "name": "Tips",
+   "parent": null,
+   "count": 4
+  }
+ },
+ "tags": {
+  "aktier": {
+   "name": "Aktier",
+   "count": 22
+  },
+  "avanza": {
+   "name": "Avanza",
+   "count": 5
+  },
+  "bors": {
+   "name": "Börs",
+   "count": 11
+  },
+  "ekonomipolitik": {
+   "name": "Ekonomipolitik",
+   "count": 1
+  },
+  "fire": {
+   "name": "FIRE",
+   "count": 1
+  },
+  "fonder": {
+   "name": "Fonder",
+   "count": 11
+  },
+  "guld": {
+   "name": "Guld",
+   "count": 1
+  },
+  "krypto": {
+   "name": "Krypto",
+   "count": 2
+  },
+  "nordnet": {
+   "name": "Nordnet",
+   "count": 4
+  },
+  "podd": {
+   "name": "Podd",
+   "count": 1
+  },
+  "privatekonomi": {
+   "name": "Privatekonomi",
+   "count": 5
+  },
+  "spara-pengar": {
+   "name": "Spara pengar",
+   "count": 15
+  },
+  "sparande": {
+   "name": "Sparande",
+   "count": 21
+  },
+  "tesla": {
+   "name": "Tesla",
+   "count": 1
+  },
+  "utdelningar": {
+   "name": "Utdelningar",
+   "count": 9
+  },
+  "utdelningsportfolj": {
+   "name": "Utdelningsportfölj",
+   "count": 6
+  },
+  "vin": {
+   "name": "Vin",
+   "count": 1
+  }
+ }
+}

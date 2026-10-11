@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+import boxes from '../../data/affiliate-boxes.json';
+import { getUpload, isSvg } from '../../lib/images';
+import { SPONSORED_REL, textOn } from '../../lib/affiliate';
+
+interface Props {
+  id: string;
+}
+type Box = { logo?: string; logoWidth?: number; logoAlt?: string; href: string; label: string; color: string; bullets: string[]; title?: string };
+const box = (boxes as Record<string, Box>)[Astro.props.id];
+if (!box) throw new Error(`Unknown affiliate box: ${Astro.props.id}`);
+const logo = box.logo ? await getUpload(box.logo) : null;
+const w = Math.min(box.logoWidth ?? 150, logo?.width ?? 150);
+---
+
+<aside class="affbox" aria-label="Annons">
+  <p class="affbox__tag">Annons</p>
+  {
+    logo && (
+      <div class="affbox__logo">
+        {isSvg(box.logo!) ? (
+          <img src={logo.src} width={w} alt={box.logoAlt ?? ''} />
+        ) : (
+          <Image src={logo} width={w} alt={box.logoAlt ?? ''} loading="lazy" />
+        )}
+      </div>
+    )
+  }
+  {box.title && <p class="affbox__title">{box.title}</p>}
+  {
+    box.bullets.length > 0 && (
+      <ul class="affbox__list">
+        {box.bullets.map((b) => (
+          <li>{b}</li>
+        ))}
+      </ul>
+    )
+  }
+  <a class="affbox__btn" href={box.href} rel={SPONSORED_REL} target="_blank" style={`background:${box.color};color:${textOn(box.color)}`}>{box.label}</a>
+</aside>
+
+<style>
+  .affbox {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.5rem 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+  }
+  .affbox__tag {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.6rem;
+    margin: 0;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .affbox__logo {
+    margin-bottom: 0.75rem;
+  }
+  .affbox__logo :global(img) {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+  .affbox__title {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+  }
+  .affbox__list {
+    list-style: none;
+    margin: 0 auto 1.1rem;
+    padding: 0;
+    max-width: 34rem;
+    text-align: left;
+  }
+  .affbox__list li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin: 0.35rem 0;
+  }
+  .affbox__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2e9e4f;
+    font-weight: 700;
+  }
+  .affbox__btn {
+    display: inline-block;
+    min-height: 44px;
+    padding: 0.7rem 1.4rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+  .affbox__btn:hover,
+  .affbox__btn:focus-visible {
+    filter: brightness(0.92);
+  }
+</style>

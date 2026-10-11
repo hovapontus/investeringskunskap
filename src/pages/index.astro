@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroCard from '../components/HeroCard.astro';
+import PostCard from '../components/PostCard.astro';
+import { allPosts, inCategory, postUrl } from '../lib/content';
+import { SITE, abs } from '../lib/site';
+import { websiteJsonLd } from '../lib/seo';
+
+const posts = await allPosts();
+const [hero, ...rest] = posts;
+const columns = [
+  { title: 'Lär dig mer om aktier', slug: 'aktier', all: '/aktier/' },
+  { title: 'Lär dig mer om fonder', slug: 'fonder', all: '/fonder/' },
+  { title: 'Privatekonomi', slug: 'privatekonomi', all: '/privatekonomi/' },
+];
+const latest = rest.slice(0, 9);
+---
+
+<BaseLayout
+  title="Investeringskunskap"
+  fullTitle={`${SITE.name} | ${SITE.tagline}`}
+  description={SITE.description}
+  path="/"
+  image={abs('/og-default.jpg')}
+  jsonLd={[websiteJsonLd()]}
+>
+  <div class="container">
+    <h1 class="sr-only">{SITE.name}: {SITE.tagline}</h1>
+
+    <div class="home-hero">
+      <HeroCard post={hero} tall eager />
+    </div>
+
+    <div class="home-cols">
+      {
+        columns.map((c) => (
+          <section aria-labelledby={`col-${c.slug}`}>
+            <h2 id={`col-${c.slug}`} class="home-cols__title"><a href={c.all}>{c.title}</a></h2>
+            <ul class="home-cols__list">
+              {inCategory(posts, c.slug).slice(0, 4).map((p) => (
+                <li><a href={postUrl(p)}>{p.data.title}</a></li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+
+    <h2 class="section-title">Senaste inläggen</h2>
+    <div class="grid">
+      {latest.map((p) => <PostCard post={p} />)}
+    </div>
+    <p class="home-more"><a class="btn-outline" href="/senaste-inlaggen/">Visa fler inlägg →</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .home-hero {
+    margin-top: 1.9rem;
+  }
+  .home-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 2.4rem;
+    margin-top: 2.6rem;
+  }
+  .home-cols__title {
+    margin: 0 0 1rem;
+    padding-bottom: 0.9rem;
+    font-size: 1.0625rem;
+    border-bottom: 2px solid var(--line);
+  }
+  .home-cols__title a {
+    color: var(--heading);
+    text-decoration: none;
+  }
+  .home-cols__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .home-cols__list li {
+    position: relative;
+    padding-left: 1rem;
+  }
+  .home-cols__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.05rem;
+    border-style: solid;
+    border-width: 4px 0 4px 6px;
+    border-color: transparent transparent transparent var(--ink);
+  }
+  .home-cols__list a {
+    display: block;
+    padding: 0.4rem 0;
+    min-height: 44px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+  .home-cols__list a:hover {
+    color: var(--accent);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem 1.5rem;
+  }
+  .home-more {
+    margin: 2rem 0 0;
+    text-align: center;
+  }
+  @media (max-width: 1023px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 760px) {
+    .home-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

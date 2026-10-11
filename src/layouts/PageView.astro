@@ -1,0 +1,149 @@
+---
+import { getImage } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PostRow from '../components/PostRow.astro';
+import PostImage from '../components/PostImage.astro';
+import { mdxComponents } from '../lib/mdx-components';
+import { allPosts, categoryName, categoryUrl, inCategory, withTag, tagName, tagUrl, type Page } from '../lib/content';
+import { getUpload } from '../lib/images';
+import { abs } from '../lib/site';
+import { breadcrumbJsonLd } from '../lib/seo';
+
+interface Props {
+  page: Page;
+  Content: any;
+}
+const { page, Content } = Astro.props;
+const d = page.data;
+const path = `/${page.id}/`;
+const posts = await allPosts();
+
+// Landing pages (root pages such as /aktier/) list the newest posts of one category or tag.
+const FEATURED_BEGINNER = ['borja-investera-vagen-till-rikedom', 'pengamaskin-sa-bygger-du-en-utdelningsportfolj-och-blir-rik'];
+let list = [] as typeof posts;
+let moreHref: string | undefined;
+let moreLabel = '';
+if (d.template === 'landing') {
+  if (d.category) {
+    list = inCategory(posts, d.category).slice(0, 10);
+    moreHref = categoryUrl(d.category);
+    moreLabel = `Alla inlägg om ${categoryName(d.category).toLowerCase()}`;
+  } else if (d.tag) {
+    list = withTag(posts, d.tag);
+    moreHref = tagUrl(d.tag);
+    moreLabel = `Alla inlägg taggade ${tagName(d.tag)}`;
+  } else if (page.id === 'nyborjarguider') {
+    const featured = FEATURED_BEGINNER.map((id) => posts.find((p) => p.id === id)!).filter(Boolean);
+    const rest = [...inCategory(posts, 'aktier'), ...inCategory(posts, 'fonder')].filter((p) => !FEATURED_BEGINNER.includes(p.id));
+    const seen = new Set<string>();
+    list = [...featured, ...rest].filter((p) => (seen.has(p.id) ? false : (seen.add(p.id), true))).slice(0, 8);
+  }
+} else if (d.template === 'latest') {
+  list = posts.slice(0, 30);
+}
+
+let ogImage: string | undefined;
+if (d.heroImage) {
+  const img = await getImage({ src: await getUpload(d.heroImage), width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+  ogImage = abs(img.src);
+}
+const noindex = d.noindex || d.draft;
+const crumbs = [{ name: 'Hem', path: '/' }, { name: d.title, path }];
+const heading = d.template === 'landing' ? (d.heading ?? d.title) : d.title;
+---
+
+<BaseLayout
+  title={d.title}
+  fullTitle={d.seoTitle}
+  description={d.description || undefined}
+  path={path}
+  image={ogImage}
+  noindex={noindex}
+  jsonLd={[breadcrumbJsonLd(crumbs.map((c) => ({ name: c.name, path: c.path })))]}
+>
+  <div class="container">
+    {
+      d.template === 'landing' ? (
+        <>
+          {d.heroImage && <PostImage src={d.heroImage} alt={d.title} width={1500} height={350} sizes="(min-width: 1170px) 1140px, 100vw" eager class="landing__hero" />}
+          <header class="landing__head">
+            <h1>{heading}</h1>
+          </header>
+        </>
+      ) : (
+        <>
+          <Breadcrumbs items={crumbs} />
+          <header class="page-head">
+            <h1>{heading}</h1>
+          </header>
+        </>
+      )
+    }
+
+    {d.draft && (
+      <p class="draft-banner" role="note">
+        <strong>Utkast:</strong> Den här sidan är ett förslag som behöver granskas och kompletteras (markerat med <strong>[FYLL I: …]</strong>) innan den publiceras. Sidan är dold för sökmotorer tills <code>draft: true</code> tas bort i filen.
+      </p>
+    )}
+
+    <div class:list={['page-body', { 'page-body--narrow': d.template !== 'landing' }]} data-pagefind-body={d.template === 'default' || d.template === 'calculator' ? '' : undefined}>
+      <div class:list={['prose', { 'landing__intro': d.template === 'landing' }]}>
+        <Content components={mdxComponents} />
+      </div>
+    </div>
+
+    {
+      list.length > 0 && (
+        <section class="landing__list" aria-label="Inlägg">
+          {list.map((p) => <PostRow post={p} />)}
+          {moreHref && (
+            <p class="landing__more">
+              <a class="btn-outline" href={moreHref}>{moreLabel} →</a>
+            </p>
+          )}
+        </section>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  :global(.landing__hero) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 1.9rem;
+    aspect-ratio: 1500 / 350;
+    object-fit: cover;
+  }
+  .landing__head {
+    margin: 1.5rem 0 0;
+    text-align: center;
+  }
+  .landing__head h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 2.25rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--heading);
+  }
+  .landing__intro {
+    text-align: center;
+    max-width: 62rem;
+    margin-inline: auto;
+    color: #53585c;
+    font-size: 0.9375rem;
+  }
+  .page-body--narrow {
+    max-width: 780px;
+  }
+  .landing__list {
+    margin-top: 2rem;
+  }
+  .landing__more {
+    margin: 2rem 0 0;
+    text-align: center;
+  }
+</style>

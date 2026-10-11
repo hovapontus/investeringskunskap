@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { allPosts } from '../lib/content';
+
+const latest = (await allPosts()).slice(0, 3);
+---
+
+<BaseLayout title="Sidan hittades inte" description="Sidan du letar efter finns inte." path="/404/" noindex>
+  <div class="container">
+    <header class="page-head">
+      <h1>Sidan hittades inte</h1>
+    </header>
+    <p>Länken kan vara felskriven eller sidan har flyttats. Prova att söka eller gå tillbaka till <a href="/">startsidan</a>.</p>
+    <form action="/sok/" method="get" role="search" class="nf-search">
+      <label for="nf-q" class="sr-only">Sök på sajten</label>
+      <input id="nf-q" name="q" type="search" placeholder="Sök efter inlägg…" />
+      <button type="submit">Sök</button>
+    </form>
+    <h2 class="section-title">Senaste inläggen</h2>
+    <div class="grid">
+      {latest.map((p) => <PostCard post={p} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .nf-search {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 30rem;
+    margin: 1.2rem 0;
+  }
+  input {
+    flex: 1;
+    min-height: 44px;
+    padding: 0 0.8rem;
+    font: inherit;
+    border: 1px solid #b9bfc7;
+  }
+  button {
+    min-height: 44px;
+    padding: 0 1.2rem;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: var(--navy);
+    border: 0;
+    cursor: pointer;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+</style>

@@ -1,0 +1,9 @@
+---
+// Renders every link in MDX content: affiliate links get rel="sponsored nofollow noopener",
+// other external links open in a new tab with rel="noopener".
+import { isExternal, relFor } from '../../lib/affiliate';
+
+const { href, ...rest } = Astro.props;
+---
+
+<a href={href} rel={relFor(href)} target={isExternal(href) ? '_blank' : undefined} {...rest}><slot /></a>

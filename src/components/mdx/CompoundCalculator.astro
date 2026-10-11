@@ -1,0 +1,260 @@
+---
+// Ränta-på-ränta-kalkylator. Replaces the WordPress "Calculator 107" plugin; runs fully in the browser.
+---
+
+<section class="calc" aria-labelledby="calc-title">
+  <h2 id="calc-title" class="calc__title">Räkna ut ditt sparande</h2>
+  <form class="calc__form" novalidate>
+    <div class="calc__field">
+      <label for="calc-start">Startbelopp (kr)</label>
+      <input id="calc-start" name="start" type="number" inputmode="decimal" min="0" step="any" value="10000" />
+    </div>
+    <div class="calc__field">
+      <label for="calc-years">Antal år</label>
+      <input id="calc-years" name="years" type="number" inputmode="numeric" min="1" max="80" step="1" value="10" />
+    </div>
+    <div class="calc__field">
+      <label for="calc-rate">Ränta per år (%)</label>
+      <input id="calc-rate" name="rate" type="number" inputmode="decimal" min="0" max="100" step="any" value="7" />
+    </div>
+    <div class="calc__field">
+      <label for="calc-monthly">Månadssparande (kr/mån)</label>
+      <input id="calc-monthly" name="monthly" type="number" inputmode="decimal" min="0" step="any" value="100" />
+    </div>
+    <div class="calc__actions">
+      <button type="submit" class="calc__btn">Beräkna</button>
+      <button type="reset" class="calc__btn calc__btn--ghost">Återställ</button>
+    </div>
+  </form>
+
+  <p class="calc__error" role="alert" hidden></p>
+
+  <div class="calc__result" aria-live="polite" hidden>
+    <p class="calc__summary"></p>
+    <dl class="calc__stats">
+      <div><dt>Slutvärde</dt><dd data-out="final"></dd></div>
+      <div><dt>Totalt insatt</dt><dd data-out="deposited"></dd></div>
+      <div><dt>Avkastning</dt><dd data-out="gain"></dd></div>
+    </dl>
+    <div class="calc__table-wrap" role="region" aria-label="Utveckling år för år" tabindex="0">
+      <table>
+        <caption class="sr-only">Utveckling år för år</caption>
+        <thead>
+          <tr><th scope="col">År</th><th scope="col">Insatt</th><th scope="col">Avkastning</th><th scope="col">Värde</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="calc__note">
+      Beräkningen antar att räntan läggs till varje månad och att månadssparandet sätts in i slutet av varje månad. Skatt och avgifter ingår inte.
+      Verklig avkastning varierar och är ingen garanti. Se vår <a href="/disclaimer/">disclaimer</a>.
+    </p>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.calc');
+  if (root) {
+    const form = root.querySelector('form')!;
+    const result = root.querySelector<HTMLElement>('.calc__result')!;
+    const errorBox = root.querySelector<HTMLElement>('.calc__error')!;
+    const kr = new Intl.NumberFormat('sv-SE', { style: 'currency', currency: 'SEK', maximumFractionDigits: 0 });
+    const out = (k: string) => root.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+
+    const num = (name: string) => {
+      const el = form.elements.namedItem(name) as HTMLInputElement;
+      return el.value === '' ? NaN : Number(el.value.replace(',', '.'));
+    };
+
+    function calculate() {
+      const start = num('start');
+      const years = num('years');
+      const rate = num('rate');
+      const monthly = num('monthly');
+      const problems: string[] = [];
+      if (!(start >= 0)) problems.push('Startbelopp måste vara 0 eller mer.');
+      if (!(years >= 1 && years <= 80)) problems.push('Antal år måste vara mellan 1 och 80.');
+      if (!(rate >= 0 && rate <= 100)) problems.push('Räntan måste vara mellan 0 och 100 procent.');
+      if (!(monthly >= 0)) problems.push('Månadssparandet måste vara 0 eller mer.');
+      if (problems.length) {
+        errorBox.textContent = problems.join(' ');
+        errorBox.hidden = false;
+        result.hidden = true;
+        return;
+      }
+      errorBox.hidden = true;
+
+      const monthlyRate = Math.pow(1 + rate / 100, 1 / 12) - 1; // effektiv årsränta -> månadsränta
+      let value = start;
+      let deposited = start;
+      const rows: string[] = [];
+      const wholeYears = Math.floor(years);
+      for (let y = 1; y <= wholeYears; y++) {
+        for (let m = 0; m < 12; m++) {
+          value = value * (1 + monthlyRate) + monthly;
+          deposited += monthly;
+        }
+        rows.push(
+          `<tr><th scope="row">${y}</th><td>${kr.format(deposited)}</td><td>${kr.format(value - deposited)}</td><td>${kr.format(value)}</td></tr>`,
+        );
+      }
+      out('final').textContent = kr.format(value);
+      out('deposited').textContent = kr.format(deposited);
+      out('gain').textContent = kr.format(value - deposited);
+      root.querySelector('.calc__summary')!.textContent =
+        `Om du sparar ${kr.format(start)} och ${kr.format(monthly)} i månaden i ${wholeYears} år med ${rate.toString().replace('.', ',')} % ränta per år blir slutvärdet ${kr.format(value)}.`;
+      root.querySelector('tbody')!.innerHTML = rows.join('');
+      result.hidden = false;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      calculate();
+    });
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        result.hidden = true;
+        errorBox.hidden = true;
+      });
+    });
+    form.addEventListener('input', () => {
+      if (!result.hidden) calculate();
+    });
+  }
+</script>
+
+<style>
+  .calc {
+    margin: 2rem 0;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--soft);
+  }
+  .calc__title {
+    margin: 0 0 1rem;
+    font-size: 1.375rem;
+  }
+  .calc__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem 1rem;
+  }
+  @media (max-width: 560px) {
+    .calc__form {
+      grid-template-columns: 1fr;
+    }
+  }
+  .calc__field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .calc__field input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.5rem 0.7rem;
+    font: inherit;
+    border: 1px solid #b9bfc7;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .calc__actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .calc__btn {
+    min-height: 44px;
+    padding: 0.6rem 1.4rem;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: var(--navy);
+    border: 2px solid var(--navy);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .calc__btn--ghost {
+    color: var(--navy);
+    background: transparent;
+  }
+  .calc__error {
+    margin: 1rem 0 0;
+    color: #a12020;
+    font-weight: 700;
+  }
+  .calc__result {
+    margin-top: 1.25rem;
+  }
+  .calc__summary {
+    margin: 0 0 1rem;
+  }
+  .calc__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 0 0 1.25rem;
+  }
+  @media (max-width: 560px) {
+    .calc__stats {
+      grid-template-columns: 1fr;
+    }
+  }
+  .calc__stats div {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+  }
+  .calc__stats dt {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .calc__stats dd {
+    margin: 0.15rem 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .calc__table-wrap {
+    overflow-x: auto;
+    max-height: 26rem;
+  }
+  .calc table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-variant-numeric: tabular-nums;
+  }
+  .calc th,
+  .calc td {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--line);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .calc thead th {
+    position: sticky;
+    top: 0;
+    background: var(--navy);
+    color: #fff;
+  }
+  .calc tbody th {
+    text-align: left;
+    font-weight: 700;
+  }
+  .calc__note {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>

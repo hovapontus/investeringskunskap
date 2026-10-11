@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import { getUpload, isSvg } from '../../lib/images';
+
+interface Props {
+  src: string; // upload key, e.g. "2022/09/x.jpg"
+  alt: string;
+  caption?: string;
+  captionHref?: string;
+  displayWidth?: number;
+  href?: string;
+}
+const { src, alt, caption, captionHref, displayWidth, href } = Astro.props;
+const img = await getUpload(src);
+const svg = isSvg(src);
+const maxW = displayWidth ? Math.min(displayWidth, img.width) : undefined;
+const target = maxW ?? Math.min(img.width, 750);
+const widths = [target, target * 2].filter((w) => w <= img.width);
+if (!widths.length) widths.push(img.width);
+const sizes = maxW ? `(min-width: ${maxW}px) ${maxW}px, 100vw` : '(min-width: 1024px) 750px, 100vw';
+const external = href && /^https?:\/\//.test(href);
+---
+
+<figure class="figure" style={maxW ? `max-width:${maxW}px` : undefined}>
+  {
+    href ? (
+      <a href={href} rel={external ? 'noopener' : undefined} target={external ? '_blank' : undefined}>
+        {svg ? <img src={img.src} width={img.width} height={img.height} alt={alt} loading="lazy" decoding="async" /> : <Image src={img} alt={alt} widths={widths} sizes={sizes} loading="lazy" />}
+      </a>
+    ) : svg ? (
+      <img src={img.src} width={img.width} height={img.height} alt={alt} loading="lazy" decoding="async" />
+    ) : (
+      <Image src={img} alt={alt} widths={widths} sizes={sizes} loading="lazy" />
+    )
+  }
+  {
+    caption && (
+      <figcaption>
+        {captionHref ? (
+          <a href={captionHref} rel="noopener" target="_blank">
+            {caption}
+          </a>
+        ) : (
+          caption
+        )}
+      </figcaption>
+    )
+  }
+</figure>
+
+<style>
+  .figure {
+    margin: 1.6rem auto;
+  }
+  .figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+</style>

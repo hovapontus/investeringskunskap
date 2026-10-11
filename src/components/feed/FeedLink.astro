@@ -1,0 +1,11 @@
+---
+// Feed fallback for interactive embeds (video, iframes): a plain link.
+interface Props {
+  id?: string;
+  src?: string;
+}
+const { id, src } = Astro.props;
+const href = id ? `https://www.youtube.com/watch?v=${id}` : src;
+---
+
+{href && <p><a href={href}>{id ? 'Titta på videon på YouTube' : 'Öppna det inbäddade innehållet'}</a></p>}

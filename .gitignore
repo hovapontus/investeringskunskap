@@ -6,3 +6,4 @@ dist/
 # WordPress export contains author emails; live snapshots are regenerable
 import/*.xml
 import/live/
+import/live-assets/

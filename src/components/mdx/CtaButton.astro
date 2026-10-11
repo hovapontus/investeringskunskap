@@ -1,0 +1,35 @@
+---
+import { relFor, textOn } from '../../lib/affiliate';
+
+interface Props {
+  href: string;
+  label: string;
+  color?: string;
+}
+const { href, label, color = '#3373dc' } = Astro.props;
+const external = /^https?:\/\//.test(href);
+---
+
+<p class="cta">
+  <a href={href} rel={relFor(href)} target={external ? '_blank' : undefined} style={`background:${color};color:${textOn(color)}`}>{label}</a>
+</p>
+
+<style>
+  .cta {
+    text-align: center;
+    margin: 1.6rem 0;
+  }
+  a {
+    display: inline-block;
+    min-height: 44px;
+    padding: 0.7rem 1.4rem;
+    border-radius: 5px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus-visible {
+    filter: brightness(0.92);
+  }
+</style>

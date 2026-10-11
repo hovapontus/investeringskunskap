@@ -1,0 +1,40 @@
+---
+// Tables were rendered by WordPress plugins; the markup is stored as clean HTML in the MDX.
+interface Props {
+  html: string;
+}
+const { html } = Astro.props;
+---
+
+<div class="table-scroll" role="region" aria-label="Tabell" tabindex="0">
+  <Fragment set:html={html} />
+</div>
+
+<style is:global>
+  .table-scroll {
+    overflow-x: auto;
+    margin: 1.6rem 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-scroll table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 420px;
+    font-size: 0.9375rem;
+  }
+  .table-scroll th,
+  .table-scroll td {
+    border: 1px solid var(--line);
+    padding: 0.55rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-scroll thead th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+  }
+  .table-scroll tbody tr:nth-child(even) {
+    background: var(--soft);
+  }
+</style>

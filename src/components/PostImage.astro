@@ -1,0 +1,32 @@
+---
+// Featured image for cards: cropped to a fixed ratio so grids stay even.
+import { Image } from 'astro:assets';
+import { getUpload } from '../lib/images';
+
+interface Props {
+  src?: string;
+  alt?: string;
+  width: number; // intrinsic output width (use ~2x the display width)
+  height: number;
+  sizes: string;
+  eager?: boolean;
+  class?: string;
+}
+const { src, alt = '', width, height, sizes, eager = false, class: className } = Astro.props;
+const img = src ? await getUpload(src) : null;
+---
+
+{
+  img ? (
+    <Image src={img} alt={alt} width={width} height={height} fit="cover" sizes={sizes} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : undefined} class={className} />
+  ) : (
+    <div class={['no-image', className].filter(Boolean).join(' ')} style={`aspect-ratio:${width}/${height}`} aria-hidden="true"></div>
+  )
+}
+
+<style>
+  .no-image {
+    background: var(--soft);
+    width: 100%;
+  }
+</style>

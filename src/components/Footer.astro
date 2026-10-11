@@ -1,0 +1,92 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: '/om-oss/', label: 'Om oss' },
+  { href: '/kontakt/', label: 'Kontakt' },
+  { href: '/samarbetspartners/', label: 'Samarbetspartners' },
+  { href: '/tips/', label: 'Tips' },
+  { href: '/disclaimer/', label: 'Disclaimer' },
+  { href: '/annonspolicy/', label: 'Annonspolicy' },
+  { href: '/integritetspolicy/', label: 'Integritetspolicy' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__cols">
+      <p>
+        Vi delar med oss av tips och nyanserade omdömen för olika investeringsplattformar samt olika sparformer.
+        Har du frågor eller tips? Använd vår <a href="/kontakt/">kontaktsida</a>.
+      </p>
+      <p>
+        <strong>Disclaimer &amp; annonspolicy:</strong> Handel med värdepapper innebär alltid en risk. Historisk avkastning är ingen garanti för framtida avkastning.
+        En investering i värdepapper/fonder kan både öka och minska i värde och det är inte säkert att du får tillbaka det investerade kapitalet.
+        Ingenting på Investeringskunskap.se ska ses som finansiell rådgivning utan endast inspiration. Det är upp till dig att göra en riskbedömning innan du väljer att investera dina pengar.
+        Länkar till exempelvis Avanza och andra partners kan vara samarbetslänkar. Läs mer i vår <a href="/disclaimer/">disclaimer</a> och <a href="/annonspolicy/">annonspolicy</a>.
+      </p>
+    </div>
+    <div class="site-footer__bar">
+      <p class="site-footer__copy">© {year} Investeringskunskap</p>
+      <nav aria-label="Sidfot">
+        <ul>
+          {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          <li><a href="/feed/">RSS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 4rem;
+    background: var(--footer);
+    color: #f1f7ed;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .site-footer a {
+    color: #fff;
+  }
+  .site-footer__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    padding: 3rem 0 2.25rem;
+  }
+  .site-footer__cols p {
+    margin: 0;
+  }
+  .site-footer__bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0 1.5rem;
+    border-top: 1px solid #4a4c5e;
+  }
+  .site-footer__copy {
+    margin: 0;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul a {
+    display: inline-block;
+    padding: 0.55rem 0;
+    min-height: 44px;
+    line-height: 1.6;
+  }
+  @media (max-width: 760px) {
+    .site-footer__cols {
+      grid-template-columns: 1fr;
+      padding-top: 2.25rem;
+    }
+  }
+</style>

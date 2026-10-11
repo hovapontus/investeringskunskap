@@ -1,0 +1,20 @@
+---
+import boxes from '../../data/affiliate-boxes.json';
+import { SPONSORED_REL } from '../../lib/affiliate';
+
+interface Props {
+  id: string;
+}
+type Box = { href: string; label: string; bullets: string[]; logoAlt?: string; title?: string };
+const box = (boxes as Record<string, Box>)[Astro.props.id];
+---
+
+{
+  box && (
+    <blockquote>
+      <p><strong>Annons{box.logoAlt ? `: ${box.logoAlt}` : ''}</strong></p>
+      <ul>{box.bullets.map((b) => <li>{b}</li>)}</ul>
+      <p><a href={box.href} rel={SPONSORED_REL}>{box.label}</a></p>
+    </blockquote>
+  )
+}

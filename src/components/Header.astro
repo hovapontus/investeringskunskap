@@ -1,0 +1,431 @@
+---
+import { MENU } from '../lib/site';
+
+interface Props {
+  currentPath?: string;
+}
+const { currentPath = '' } = Astro.props;
+const isCurrent = (href?: string) => href && (currentPath === href || (href !== '/' && currentPath.startsWith(href)));
+
+const icons = {
+  money:
+    'M2 6h20v12H2zm10 2.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM5 9v6m14-6v6',
+  person: 'M12 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-4 7h8l-1 5h-1.5l-.5 6h-2l-.5-6H9z',
+  news: 'M3 4h15v15H5a2 2 0 0 1-2-2zm15 3h3v10a2 2 0 0 1-2 2M6 8h9M6 11h9M6 14h6',
+};
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="/" aria-label="Investeringskunskap, startsidan">Investeringskunskap.se</a>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Meny"
+    >
+      <svg class="nav-toggle__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path class="bars" d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+        <path class="cross" d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Huvudmeny">
+      <ul class="menu">
+        {
+          MENU.map((item, i) => (
+            <li class:list={['menu__item', { 'has-sub': !!item.children }]}>
+              {item.children ? (
+                <>
+                  {item.href ? (
+                    <a class="menu__link" href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+                      <svg class="menu__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d={icons[item.icon]} fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></svg>
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button type="button" class="menu__link menu__link--button" aria-expanded="false" aria-controls={`sub-${i}`}>
+                      <svg class="menu__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d={icons[item.icon]} fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></svg>
+                      {item.label}
+                      <svg class="menu__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </button>
+                  )}
+                  {item.href && (
+                    <button type="button" class="sub-toggle" aria-expanded="false" aria-controls={`sub-${i}`} aria-label={`Visa undermeny för ${item.label}`}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </button>
+                  )}
+                  <ul class="submenu" id={`sub-${i}`}>
+                    {item.children.map((c) => (
+                      <li>
+                        <a href={c.href} aria-current={isCurrent(c.href) ? 'page' : undefined}>{c.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <a class="menu__link" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                  <svg class="menu__icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d={icons[item.icon]} fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></svg>
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <form class="search" action="/sok/" method="get" role="search">
+        <label class="sr-only" for="header-search">Sök på sajten</label>
+        <input id="header-search" name="q" type="search" placeholder="Sök…" autocomplete="off" />
+        <button type="submit" aria-label="Sök">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.5" /><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" /></svg>
+        </button>
+      </form>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Menu behaviour: hamburger (mobile) and dropdowns (desktop).
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (header) {
+    const toggle = header.querySelector<HTMLButtonElement>('.nav-toggle')!;
+    const nav = header.querySelector<HTMLElement>('#primary-nav')!;
+
+    const setNav = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Stäng meny' : 'Meny');
+      header.classList.toggle('is-open', open);
+    };
+    const subButtons = () => [...header.querySelectorAll<HTMLButtonElement>('[aria-controls^="sub-"]')];
+    const closeSubs = (except?: Element | null) => {
+      subButtons().forEach((b) => {
+        if (except && b.closest('.menu__item') === except) return;
+        b.setAttribute('aria-expanded', 'false');
+        b.closest('.menu__item')?.classList.remove('is-open');
+      });
+    };
+
+    toggle.addEventListener('click', () => setNav(toggle.getAttribute('aria-expanded') !== 'true'));
+
+    header.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      // Link click closes the mobile panel (and any dropdown)
+      if (target.closest('a[href]')) {
+        setNav(false);
+        closeSubs();
+        return;
+      }
+      const btn = target.closest<HTMLButtonElement>('[aria-controls^="sub-"]');
+      if (btn) {
+        const item = btn.closest('.menu__item')!;
+        const open = !item.classList.contains('is-open');
+        delete header.dataset.dismissed;
+        closeSubs(item);
+        item.classList.toggle('is-open', open);
+        item.querySelectorAll('[aria-controls^="sub-"]').forEach((b) => b.setAttribute('aria-expanded', String(open)));
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const wasOpen = toggle.getAttribute('aria-expanded') === 'true';
+      const openItem = header.querySelector('.menu__item.is-open');
+      setNav(false);
+      closeSubs();
+      header.dataset.dismissed = 'true'; // keeps :hover/:focus-within dropdowns closed until the pointer leaves
+      if (wasOpen) toggle.focus();
+      else (openItem?.querySelector('button[aria-expanded]') as HTMLElement | null)?.focus();
+    });
+
+    header.addEventListener('mouseout', (e) => {
+      if (!header.dataset.dismissed) return;
+      const item = (e.target as HTMLElement).closest('.menu__item');
+      if (item && !item.contains(e.relatedTarget as Node | null)) delete header.dataset.dismissed;
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!header.contains(e.target as Node)) {
+        setNav(false);
+        closeSubs();
+      }
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 20;
+    background: var(--navy);
+    color: #fff;
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    min-height: 72px;
+  }
+
+  .logo {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 1rem + 2vw, 2.15rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 2rem;
+    white-space: nowrap;
+  }
+
+  .primary-nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .menu__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 0.6rem;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .menu__link:hover,
+  .menu__link[aria-current='page'] {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+  .menu__icon {
+    color: #ff4d62;
+    flex: none;
+  }
+  .sub-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 44px;
+    margin-left: -0.35rem;
+    color: #fff;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .menu__chevron {
+    margin-left: -0.1rem;
+  }
+  .sub-toggle svg,
+  .menu__chevron {
+    transition: transform 0.15s;
+  }
+  .menu__item.is-open .sub-toggle svg,
+  .menu__item.is-open .menu__chevron {
+    transform: rotate(180deg);
+  }
+
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 13rem;
+    margin: 0;
+    padding: 0.4rem 0;
+    list-style: none;
+    background: #fff;
+    border-top: 3px solid var(--accent);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.18);
+    display: none;
+  }
+  .menu__item.is-open > .submenu,
+  .menu__item:hover > .submenu,
+  .menu__item:focus-within > .submenu {
+    display: block;
+  }
+  @media (min-width: 900px) {
+    .site-header[data-dismissed] .menu__item:not(.is-open):hover > .submenu,
+    .site-header[data-dismissed] .menu__item:not(.is-open):focus-within > .submenu {
+      display: none;
+    }
+  }
+  .submenu a {
+    display: block;
+    padding: 0.7rem 1rem;
+    min-height: 44px;
+    color: var(--heading);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .submenu a:hover,
+  .submenu a[aria-current='page'] {
+    background: var(--soft);
+    color: var(--navy);
+  }
+
+  .search {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background: var(--navy-light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .search input {
+    width: 7.5rem;
+    min-height: 44px;
+    padding: 0 0.5rem 0 0.9rem;
+    font: inherit;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: transparent;
+    border: 0;
+  }
+  .search input::placeholder {
+    color: #c9d0f0;
+  }
+  .search input:focus-visible {
+    outline-offset: -3px;
+  }
+  .search button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  /* ---------- Mobile: same container + gutter as the page; hamburger flush right ---------- */
+  @media (max-width: 899px) {
+    .site-header__inner {
+      min-height: 64px;
+      justify-content: space-between;
+    }
+    .logo {
+      margin-right: 0;
+    }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      /* the 24px glyph sits centred in the 44px tap target; pull the button out
+         by the 10px padding so the icon itself lines up with the content edge */
+      margin: 0 -10px 0 0;
+      padding: 0;
+      color: #fff;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+    .nav-toggle .cross,
+    .is-open .nav-toggle .bars {
+      display: none;
+    }
+    .is-open .nav-toggle .cross {
+      display: block;
+    }
+    .nav-toggle .cross {
+      display: none;
+    }
+
+    .site-header__inner {
+      flex-wrap: wrap;
+    }
+    .primary-nav {
+      flex: 0 0 100%;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0.25rem 0 1rem;
+      border-top: 1px solid rgb(255 255 255 / 0.18);
+    }
+    /* with JavaScript the panel drops over the page; without it, it simply sits in the flow */
+    :global(.js) .primary-nav {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      padding: 0.25rem var(--gutter) 1rem;
+      background: var(--navy);
+      box-shadow: 0 10px 20px rgb(0 0 0 / 0.25);
+    }
+    :global(.js) .is-open .primary-nav {
+      display: flex;
+    }
+    .menu {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .menu__item {
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgb(255 255 255 / 0.12);
+    }
+    .menu__link {
+      flex: 1;
+      padding-left: 0;
+      min-height: 48px;
+    }
+    .sub-toggle {
+      display: none;
+    }
+    /* sub-lists are always expanded in the mobile panel: fewer taps */
+    .submenu {
+      position: static;
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 0 0 0.5rem 1.6rem;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    .submenu a {
+      color: #dfe4ff;
+      padding: 0.55rem 0;
+    }
+    .submenu a:hover,
+    .submenu a[aria-current='page'] {
+      background: transparent;
+      color: #fff;
+      text-decoration: underline;
+    }
+    .search {
+      margin: 0.9rem 0 0;
+    }
+    .search input {
+      flex: 1;
+      width: auto;
+    }
+  }
+</style>
