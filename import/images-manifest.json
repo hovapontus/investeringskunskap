@@ -1,6 +1,6 @@
 {
  "/wp-content/uploads/2022/01/DLTdiagramV2.png": {
-  "file": "import/images/2022/01/DLTdiagramV2.png",
+  "file": "src/assets/uploads/2022/01/DLTdiagramV2.png",
   "used_by": [
    "kryptovalutor-och-blockkedjor-en-grundlig-genomgang-om-bitcoins-framfart"
   ],
@@ -13,7 +13,7 @@
   "bytes": 28989
  },
  "/wp-content/uploads/2022/01/KontonTabell-1-1024x576-1.jpg": {
-  "file": "import/images/2022/01/KontonTabell-1-1024x576-1.jpg",
+  "file": "src/assets/uploads/2022/01/KontonTabell-1-1024x576-1.jpg",
   "used_by": [
    "borja-investera-vagen-till-rikedom"
   ],
@@ -26,7 +26,7 @@
   "bytes": 79909
  },
  "/wp-content/uploads/2022/01/Skarmbild-4.png": {
-  "file": "import/images/2022/01/Skarmbild-4.png",
+  "file": "src/assets/uploads/2022/01/Skarmbild-4.png",
   "used_by": [
    "pengamaskin-sa-bygger-du-en-utdelningsportfolj-och-blir-rik"
   ],
@@ -37,7 +37,7 @@
   "bytes": 84866
  },
  "/wp-content/uploads/2022/01/Skarmbild-5.png": {
-  "file": "import/images/2022/01/Skarmbild-5.png",
+  "file": "src/assets/uploads/2022/01/Skarmbild-5.png",
   "used_by": [
    "kryptovalutor-och-blockkedjor-en-grundlig-genomgang-om-bitcoins-framfart"
   ],
@@ -48,7 +48,7 @@
   "bytes": 74492
  },
  "/wp-content/uploads/2022/01/Skarmbild-6.png": {
-  "file": "import/images/2022/01/Skarmbild-6.png",
+  "file": "src/assets/uploads/2022/01/Skarmbild-6.png",
   "used_by": [
    "vad-ar-en-nft-vad-du-maste-veta"
   ],
@@ -59,7 +59,7 @@
   "bytes": 422376
  },
  "/wp-content/uploads/2022/01/Utdelningsportfolj-1.jpg": {
-  "file": "import/images/2022/01/Utdelningsportfolj-1.jpg",
+  "file": "src/assets/uploads/2022/01/Utdelningsportfolj-1.jpg",
   "used_by": [
    "pengamaskin-sa-bygger-du-en-utdelningsportfolj-och-blir-rik"
   ],
@@ -70,7 +70,7 @@
   "bytes": 116347
  },
  "/wp-content/uploads/2022/01/beeple-christies-auction-everydays-first-5000-days_dezeen_2364_hero.jpg": {
-  "file": "import/images/2022/01/beeple-christies-auction-everydays-first-5000-days_dezeen_2364_hero.jpg",
+  "file": "src/assets/uploads/2022/01/beeple-christies-auction-everydays-first-5000-days_dezeen_2364_hero.jpg",
   "used_by": [
    "vad-ar-en-nft-vad-du-maste-veta"
   ],
@@ -81,7 +81,7 @@
   "bytes": 1259848
  },
  "/wp-content/uploads/2022/01/coinmetricsbtchalving-1aa1b4c4ddea47cfbe0439daf6e3626e.jpg": {
-  "file": "import/images/2022/01/coinmetricsbtchalving-1aa1b4c4ddea47cfbe0439daf6e3626e.jpg",
+  "file": "src/assets/uploads/2022/01/coinmetricsbtchalving-1aa1b4c4ddea47cfbe0439daf6e3626e.jpg",
   "used_by": [
    "kryptovalutor-och-blockkedjor-en-grundlig-genomgang-om-bitcoins-framfart"
   ],
@@ -92,7 +92,7 @@
   "bytes": 99531
  },
  "/wp-content/uploads/2022/01/cropped-invest-favicon.jpg": {
-  "file": "import/images/2022/01/cropped-invest-favicon.jpg",
+  "file": "src/assets/uploads/2022/01/cropped-invest-favicon.jpg",
   "used_by": [
    "_site"
   ],
@@ -103,7 +103,7 @@
   "bytes": 40263
  },
  "/wp-content/uploads/2022/08/el.jpg": {
-  "file": "import/images/2022/08/el.jpg",
+  "file": "src/assets/uploads/2022/08/el.jpg",
   "used_by": [
    "vad-du-maste-gora-for-att-spara-pengar-2022"
   ],
@@ -116,7 +116,7 @@
   "bytes": 413985
  },
  "/wp-content/uploads/2022/08/historical-gold-prices-100-year-chart-2022-08-23-macrotrends.png": {
-  "file": "import/images/2022/08/historical-gold-prices-100-year-chart-2022-08-23-macrotrends.png",
+  "file": "src/assets/uploads/2022/08/historical-gold-prices-100-year-chart-2022-08-23-macrotrends.png",
   "used_by": [
    "en-portfolj-for-samre-tider"
   ],
@@ -127,7 +127,7 @@
   "bytes": 71428
  },
  "/wp-content/uploads/2022/09/1200x1200bb-75-1.jpg": {
-  "file": "import/images/2022/09/1200x1200bb-75-1.jpg",
+  "file": "src/assets/uploads/2022/09/1200x1200bb-75-1.jpg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -140,7 +140,7 @@
   "bytes": 56967
  },
  "/wp-content/uploads/2022/09/1200x1200bb-75-4.jpg": {
-  "file": "import/images/2022/09/1200x1200bb-75-4.jpg",
+  "file": "src/assets/uploads/2022/09/1200x1200bb-75-4.jpg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -153,7 +153,7 @@
   "bytes": 105189
  },
  "/wp-content/uploads/2022/09/Done.jpeg": {
-  "file": "import/images/2022/09/Done.jpeg",
+  "file": "src/assets/uploads/2022/09/Done.jpeg",
   "used_by": [
    "en-recension-om-kameo-2022"
   ],
@@ -164,7 +164,7 @@
   "bytes": 76281
  },
  "/wp-content/uploads/2022/09/Follow.jpg": {
-  "file": "import/images/2022/09/Follow.jpg",
+  "file": "src/assets/uploads/2022/09/Follow.jpg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -177,7 +177,7 @@
   "bytes": 90347
  },
  "/wp-content/uploads/2022/09/Namnlost-1.jpg": {
-  "file": "import/images/2022/09/Namnlost-1.jpg",
+  "file": "src/assets/uploads/2022/09/Namnlost-1.jpg",
   "used_by": [
    "guld-och-ravaror"
   ],
@@ -188,7 +188,7 @@
   "bytes": 37775
  },
  "/wp-content/uploads/2022/09/Ofralse-1-1.png": {
-  "file": "import/images/2022/09/Ofralse-1-1.png",
+  "file": "src/assets/uploads/2022/09/Ofralse-1-1.png",
   "used_by": [
    "aktier"
   ],
@@ -199,7 +199,7 @@
   "bytes": 61046
  },
  "/wp-content/uploads/2022/09/Ofralse-1.jpg": {
-  "file": "import/images/2022/09/Ofralse-1.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse-1.jpg",
   "used_by": [
    "pengamaskin-sa-bygger-du-en-utdelningsportfolj-och-blir-rik"
   ],
@@ -210,7 +210,7 @@
   "bytes": 31081
  },
  "/wp-content/uploads/2022/09/Ofralse-1.png": {
-  "file": "import/images/2022/09/Ofralse-1.png",
+  "file": "src/assets/uploads/2022/09/Ofralse-1.png",
   "used_by": [
    "hur-viktigt-ar-det-att-ha-flera-inkomstkallor"
   ],
@@ -223,7 +223,7 @@
   "bytes": 37749
  },
  "/wp-content/uploads/2022/09/Ofralse.jpg": {
-  "file": "import/images/2022/09/Ofralse.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse.jpg",
   "used_by": [
    "borja-investera-vagen-till-rikedom"
   ],
@@ -234,7 +234,7 @@
   "bytes": 80264
  },
  "/wp-content/uploads/2022/09/Ofralse1-1.jpg": {
-  "file": "import/images/2022/09/Ofralse1-1.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse1-1.jpg",
   "used_by": [
    "vad-ar-en-nft-vad-du-maste-veta"
   ],
@@ -245,7 +245,7 @@
   "bytes": 44818
  },
  "/wp-content/uploads/2022/09/Ofralse1.jpg": {
-  "file": "import/images/2022/09/Ofralse1.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse1.jpg",
   "used_by": [
    "kryptovalutor-och-blockkedjor-en-grundlig-genomgang-om-bitcoins-framfart"
   ],
@@ -256,7 +256,7 @@
   "bytes": 51437
  },
  "/wp-content/uploads/2022/09/Ofralse2-1.jpg": {
-  "file": "import/images/2022/09/Ofralse2-1.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse2-1.jpg",
   "used_by": [
    "allt-du-behover-veta-om-ditt-fondsparande"
   ],
@@ -267,7 +267,7 @@
   "bytes": 134463
  },
  "/wp-content/uploads/2022/09/Ofralse2-2.jpg": {
-  "file": "import/images/2022/09/Ofralse2-2.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse2-2.jpg",
   "used_by": [
    "vilken-el-ar-bast-till-din-fastighet"
   ],
@@ -278,7 +278,7 @@
   "bytes": 49214
  },
  "/wp-content/uploads/2022/09/Ofralse3-1.jpg": {
-  "file": "import/images/2022/09/Ofralse3-1.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse3-1.jpg",
   "used_by": [
    "en-portfolj-for-samre-tider"
   ],
@@ -289,7 +289,7 @@
   "bytes": 23026
  },
  "/wp-content/uploads/2022/09/Ofralse4.jpg": {
-  "file": "import/images/2022/09/Ofralse4.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse4.jpg",
   "used_by": [
    "vad-du-maste-gora-for-att-spara-pengar-2022"
   ],
@@ -300,7 +300,7 @@
   "bytes": 35252
  },
  "/wp-content/uploads/2022/09/Ofralse5.jpg": {
-  "file": "import/images/2022/09/Ofralse5.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse5.jpg",
   "used_by": [
    "fixa-lagre-ranta-med-anyfin"
   ],
@@ -311,7 +311,7 @@
   "bytes": 46892
  },
  "/wp-content/uploads/2022/09/Ofralse6.jpg": {
-  "file": "import/images/2022/09/Ofralse6.jpg",
+  "file": "src/assets/uploads/2022/09/Ofralse6.jpg",
   "used_by": [
    "hur-viktigt-ar-det-att-ha-flera-inkomstkallor"
   ],
@@ -322,7 +322,7 @@
   "bytes": 48612
  },
  "/wp-content/uploads/2022/09/Poddarmallcompressed.jpeg": {
-  "file": "import/images/2022/09/Poddarmallcompressed.jpeg",
+  "file": "src/assets/uploads/2022/09/Poddarmallcompressed.jpeg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -333,7 +333,7 @@
   "bytes": 79088
  },
  "/wp-content/uploads/2022/09/RareWine-1.jpg": {
-  "file": "import/images/2022/09/RareWine-1.jpg",
+  "file": "src/assets/uploads/2022/09/RareWine-1.jpg",
   "used_by": [
    "rarewine-invest-tjana-pengar-pa-vin"
   ],
@@ -344,7 +344,7 @@
   "bytes": 6723
  },
  "/wp-content/uploads/2022/09/Samarbetspartners.jpg": {
-  "file": "import/images/2022/09/Samarbetspartners.jpg",
+  "file": "src/assets/uploads/2022/09/Samarbetspartners.jpg",
   "used_by": [
    "samarbetspartners"
   ],
@@ -355,7 +355,7 @@
   "bytes": 67508
  },
  "/wp-content/uploads/2022/09/Skarmbild-42-1.png": {
-  "file": "import/images/2022/09/Skarmbild-42-1.png",
+  "file": "src/assets/uploads/2022/09/Skarmbild-42-1.png",
   "used_by": [
    "rarewine-invest-tjana-pengar-pa-vin"
   ],
@@ -366,7 +366,7 @@
   "bytes": 1024047
  },
  "/wp-content/uploads/2022/09/Skarmbild-43.png": {
-  "file": "import/images/2022/09/Skarmbild-43.png",
+  "file": "src/assets/uploads/2022/09/Skarmbild-43.png",
   "used_by": [
    "rarewine-invest-tjana-pengar-pa-vin"
   ],
@@ -377,7 +377,7 @@
   "bytes": 1056638
  },
  "/wp-content/uploads/2022/09/Skarmbild__39_-removebg-preview.png": {
-  "file": "import/images/2022/09/Skarmbild__39_-removebg-preview.png",
+  "file": "src/assets/uploads/2022/09/Skarmbild__39_-removebg-preview.png",
   "used_by": [
    "rocker-kortet-som-tjanar-pengar-ett-omdome"
   ],
@@ -390,7 +390,7 @@
   "bytes": 109166
  },
  "/wp-content/uploads/2022/09/cropped-BORSKUNSKAP_v3-01-removebg-preview.png": {
-  "file": "import/images/2022/09/cropped-BORSKUNSKAP_v3-01-removebg-preview.png",
+  "file": "src/assets/uploads/2022/09/cropped-BORSKUNSKAP_v3-01-removebg-preview.png",
   "used_by": [
    "samarbetspartners"
   ],
@@ -403,7 +403,7 @@
   "bytes": 43939
  },
  "/wp-content/uploads/2022/09/fonder.jpg": {
-  "file": "import/images/2022/09/fonder.jpg",
+  "file": "src/assets/uploads/2022/09/fonder.jpg",
   "used_by": [
    "fonder"
   ],
@@ -414,7 +414,7 @@
   "bytes": 67856
  },
  "/wp-content/uploads/2022/09/kryptovaluta.jpg": {
-  "file": "import/images/2022/09/kryptovaluta.jpg",
+  "file": "src/assets/uploads/2022/09/kryptovaluta.jpg",
   "used_by": [
    "kryptovaluta"
   ],
@@ -425,7 +425,7 @@
   "bytes": 47323
  },
  "/wp-content/uploads/2022/09/rocker.jpg": {
-  "file": "import/images/2022/09/rocker.jpg",
+  "file": "src/assets/uploads/2022/09/rocker.jpg",
   "used_by": [
    "rocker-kortet-som-tjanar-pengar-ett-omdome"
   ],
@@ -436,7 +436,7 @@
   "bytes": 15176
  },
  "/wp-content/uploads/2022/09/ulf.jpg": {
-  "file": "import/images/2022/09/ulf.jpg",
+  "file": "src/assets/uploads/2022/09/ulf.jpg",
   "used_by": [
    "sa-paverkar-ett-regeringsskifte-din-ekonomi"
   ],
@@ -447,7 +447,7 @@
   "bytes": 28672
  },
  "/wp-content/uploads/2022/10/1200x1200bb-75-1.jpg": {
-  "file": "import/images/2022/10/1200x1200bb-75-1.jpg",
+  "file": "src/assets/uploads/2022/10/1200x1200bb-75-1.jpg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -460,7 +460,7 @@
   "bytes": 80133
  },
  "/wp-content/uploads/2022/10/A_Kassa_Inkomstforsakring-1.jpg": {
-  "file": "import/images/2022/10/A_Kassa_Inkomstforsakring-1.jpg",
+  "file": "src/assets/uploads/2022/10/A_Kassa_Inkomstforsakring-1.jpg",
   "used_by": [
    "fackforbund-ska-man-vara-med-i-facket"
   ],
@@ -471,7 +471,7 @@
   "bytes": 21439
  },
  "/wp-content/uploads/2022/10/Bankdagar.jpg": {
-  "file": "import/images/2022/10/Bankdagar.jpg",
+  "file": "src/assets/uploads/2022/10/Bankdagar.jpg",
   "used_by": [
    "pengamaskin-sa-bygger-du-en-utdelningsportfolj-och-blir-rik"
   ],
@@ -482,7 +482,7 @@
   "bytes": 34006
  },
  "/wp-content/uploads/2022/10/Fackförbund.jpg": {
-  "file": "import/images/2022/10/Fackförbund.jpg",
+  "file": "src/assets/uploads/2022/10/Fackförbund.jpg",
   "used_by": [
    "fackforbund-ska-man-vara-med-i-facket"
   ],
@@ -493,7 +493,7 @@
   "bytes": 167288
  },
  "/wp-content/uploads/2022/10/Feroldi-1.jpg": {
-  "file": "import/images/2022/10/Feroldi-1.jpg",
+  "file": "src/assets/uploads/2022/10/Feroldi-1.jpg",
   "used_by": [
    "finanstwitter-bli-inspirerad-av-andra"
   ],
@@ -506,7 +506,7 @@
   "bytes": 40579
  },
  "/wp-content/uploads/2022/10/Ofralse-1-1.jpg": {
-  "file": "import/images/2022/10/Ofralse-1-1.jpg",
+  "file": "src/assets/uploads/2022/10/Ofralse-1-1.jpg",
   "used_by": [
    "privatekonomi"
   ],
@@ -517,7 +517,7 @@
   "bytes": 27504
  },
  "/wp-content/uploads/2022/10/Ofralse-2-1-1.jpg": {
-  "file": "import/images/2022/10/Ofralse-2-1-1.jpg",
+  "file": "src/assets/uploads/2022/10/Ofralse-2-1-1.jpg",
   "used_by": [
    "tradingview-recension-omdome-2022"
   ],
@@ -528,7 +528,7 @@
   "bytes": 15063
  },
  "/wp-content/uploads/2022/10/Ofralse-2-1.jpg": {
-  "file": "import/images/2022/10/Ofralse-2-1.jpg",
+  "file": "src/assets/uploads/2022/10/Ofralse-2-1.jpg",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -539,7 +539,7 @@
   "bytes": 16526
  },
  "/wp-content/uploads/2022/10/RayDalio_2017-embed-1.jpeg": {
-  "file": "import/images/2022/10/RayDalio_2017-embed-1.jpeg",
+  "file": "src/assets/uploads/2022/10/RayDalio_2017-embed-1.jpeg",
   "used_by": [
    "hedgefondforvaltare-och-kanda-investerare-deras-kop-2022"
   ],
@@ -552,7 +552,7 @@
   "bytes": 213226
  },
  "/wp-content/uploads/2022/10/Savelend.png": {
-  "file": "import/images/2022/10/Savelend.png",
+  "file": "src/assets/uploads/2022/10/Savelend.png",
   "used_by": [
    "basta-sparrantan-just-nu-jamfor-sparkonton-och-sparrantor",
    "recension-omdome-av-savelend-2022",
@@ -567,7 +567,7 @@
   "bytes": 41299
  },
  "/wp-content/uploads/2022/10/Skarmbild-50.png": {
-  "file": "import/images/2022/10/Skarmbild-50.png",
+  "file": "src/assets/uploads/2022/10/Skarmbild-50.png",
   "used_by": [
    "tradingview-recension-omdome-2022"
   ],
@@ -578,7 +578,7 @@
   "bytes": 10467
  },
  "/wp-content/uploads/2022/10/Skarmbild-57-1.png": {
-  "file": "import/images/2022/10/Skarmbild-57-1.png",
+  "file": "src/assets/uploads/2022/10/Skarmbild-57-1.png",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -589,7 +589,7 @@
   "bytes": 34617
  },
  "/wp-content/uploads/2022/10/Skarmbild-61.png": {
-  "file": "import/images/2022/10/Skarmbild-61.png",
+  "file": "src/assets/uploads/2022/10/Skarmbild-61.png",
   "used_by": [
    "tradingview-recension-omdome-2022"
   ],
@@ -600,7 +600,7 @@
   "bytes": 137724
  },
  "/wp-content/uploads/2022/10/Skarmbild-62.png": {
-  "file": "import/images/2022/10/Skarmbild-62.png",
+  "file": "src/assets/uploads/2022/10/Skarmbild-62.png",
   "used_by": [
    "tradingview-recension-omdome-2022"
   ],
@@ -611,7 +611,7 @@
   "bytes": 25804
  },
  "/wp-content/uploads/2022/10/Skarmbild-63.png": {
-  "file": "import/images/2022/10/Skarmbild-63.png",
+  "file": "src/assets/uploads/2022/10/Skarmbild-63.png",
   "used_by": [
    "tradingview-recension-omdome-2022"
   ],
@@ -622,7 +622,7 @@
   "bytes": 103577
  },
  "/wp-content/uploads/2022/10/Skarmbild__58_-removebg-preview-1.png": {
-  "file": "import/images/2022/10/Skarmbild__58_-removebg-preview-1.png",
+  "file": "src/assets/uploads/2022/10/Skarmbild__58_-removebg-preview-1.png",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -633,7 +633,7 @@
   "bytes": 197737
  },
  "/wp-content/uploads/2022/10/begravning-1.jpg": {
-  "file": "import/images/2022/10/begravning-1.jpg",
+  "file": "src/assets/uploads/2022/10/begravning-1.jpg",
   "used_by": [
    "kostnader-forenliga-med-en-begravning"
   ],
@@ -644,7 +644,7 @@
   "bytes": 95300
  },
  "/wp-content/uploads/2022/10/berkshire.jpg": {
-  "file": "import/images/2022/10/berkshire.jpg",
+  "file": "src/assets/uploads/2022/10/berkshire.jpg",
   "used_by": [
    "hedgefondforvaltare-och-kanda-investerare-deras-kop-2022"
   ],
@@ -657,7 +657,7 @@
   "bytes": 790834
  },
  "/wp-content/uploads/2022/10/stockblogs_logo.png": {
-  "file": "import/images/2022/10/stockblogs_logo.png",
+  "file": "src/assets/uploads/2022/10/stockblogs_logo.png",
   "used_by": [
    "samarbetspartners"
   ],
@@ -670,7 +670,7 @@
   "bytes": 3720
  },
  "/wp-content/uploads/2022/10/tradingviewlogo-freelogovectors.net_.svg": {
-  "file": "import/images/2022/10/tradingviewlogo-freelogovectors.net_.svg",
+  "file": "src/assets/uploads/2022/10/tradingviewlogo-freelogovectors.net_.svg",
   "used_by": [
    "tradingview-recension-omdome-2022",
    "tradingview-tradingview"
@@ -682,7 +682,7 @@
   "bytes": 3044
  },
  "/wp-content/uploads/2022/10/unnamed.jpg": {
-  "file": "import/images/2022/10/unnamed.jpg",
+  "file": "src/assets/uploads/2022/10/unnamed.jpg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -695,7 +695,7 @@
   "bytes": 40386
  },
  "/wp-content/uploads/2022/10/warren-buffet-investeringskunskap.jpg": {
-  "file": "import/images/2022/10/warren-buffet-investeringskunskap.jpg",
+  "file": "src/assets/uploads/2022/10/warren-buffet-investeringskunskap.jpg",
   "used_by": [
    "hedgefondforvaltare-och-kanda-investerare-deras-kop-2022"
   ],
@@ -706,7 +706,7 @@
   "bytes": 865268
  },
  "/wp-content/uploads/2022/11/1200x1200bb-75-2-1.jpg": {
-  "file": "import/images/2022/11/1200x1200bb-75-2-1.jpg",
+  "file": "src/assets/uploads/2022/11/1200x1200bb-75-2-1.jpg",
   "used_by": [
    "finanspoddar-for-att-bli-en-lyckad-investerare"
   ],
@@ -719,7 +719,7 @@
   "bytes": 31455
  },
  "/wp-content/uploads/2022/11/4procent-1.jpg": {
-  "file": "import/images/2022/11/4procent-1.jpg",
+  "file": "src/assets/uploads/2022/11/4procent-1.jpg",
   "used_by": [
    "vad-ar-fire-en-guide-for-att-bli-ekonomiskt-fri"
   ],
@@ -730,7 +730,7 @@
   "bytes": 88493
  },
  "/wp-content/uploads/2022/11/6eJZ-i2w_400x400-1.jpg": {
-  "file": "import/images/2022/11/6eJZ-i2w_400x400-1.jpg",
+  "file": "src/assets/uploads/2022/11/6eJZ-i2w_400x400-1.jpg",
   "used_by": [
    "finanstwitter-bli-inspirerad-av-andra"
   ],
@@ -741,7 +741,7 @@
   "bytes": 18730
  },
  "/wp-content/uploads/2022/11/Avanza_logotyp.png": {
-  "file": "import/images/2022/11/Avanza_logotyp.png",
+  "file": "src/assets/uploads/2022/11/Avanza_logotyp.png",
   "used_by": [
    "13-smarta-satt-att-spara-pengar-som-student",
    "avanza-adrecord",
@@ -765,7 +765,7 @@
   "bytes": 7695
  },
  "/wp-content/uploads/2022/11/FTX.jpg": {
-  "file": "import/images/2022/11/FTX.jpg",
+  "file": "src/assets/uploads/2022/11/FTX.jpg",
   "used_by": [
    "ftx-fran-en-av-varldens-storsta-kryptoborser-till-total-kollaps"
   ],
@@ -776,7 +776,7 @@
   "bytes": 150670
  },
  "/wp-content/uploads/2022/11/Fire-2.jpg": {
-  "file": "import/images/2022/11/Fire-2.jpg",
+  "file": "src/assets/uploads/2022/11/Fire-2.jpg",
   "used_by": [
    "vad-ar-fire-en-guide-for-att-bli-ekonomiskt-fri"
   ],
@@ -787,7 +787,7 @@
   "bytes": 218097
  },
  "/wp-content/uploads/2022/11/Hejsan.jpg": {
-  "file": "import/images/2022/11/Hejsan.jpg",
+  "file": "src/assets/uploads/2022/11/Hejsan.jpg",
   "used_by": [
    "att-jamfora-elavtal-och-elpriser"
   ],
@@ -798,7 +798,7 @@
   "bytes": 59048
  },
  "/wp-content/uploads/2022/11/Ofralse-50000.jpg": {
-  "file": "import/images/2022/11/Ofralse-50000.jpg",
+  "file": "src/assets/uploads/2022/11/Ofralse-50000.jpg",
   "used_by": [
    "hur-ska-man-investera-100-000-kr"
   ],
@@ -809,7 +809,7 @@
   "bytes": 47763
  },
  "/wp-content/uploads/2022/11/Ofralse11.jpg": {
-  "file": "import/images/2022/11/Ofralse11.jpg",
+  "file": "src/assets/uploads/2022/11/Ofralse11.jpg",
   "used_by": [
    "hur-ska-man-investera-100-000-kr"
   ],
@@ -820,7 +820,7 @@
   "bytes": 244201
  },
  "/wp-content/uploads/2022/11/Ofralse2-1.jpg": {
-  "file": "import/images/2022/11/Ofralse2-1.jpg",
+  "file": "src/assets/uploads/2022/11/Ofralse2-1.jpg",
   "used_by": [
    "hur-ska-man-investera-100-000-kr"
   ],
@@ -831,7 +831,7 @@
   "bytes": 266485
  },
  "/wp-content/uploads/2022/11/Q6CSAOMSBRGUXIEQPJ5GZMOSQU-1.jpg": {
-  "file": "import/images/2022/11/Q6CSAOMSBRGUXIEQPJ5GZMOSQU-1.jpg",
+  "file": "src/assets/uploads/2022/11/Q6CSAOMSBRGUXIEQPJ5GZMOSQU-1.jpg",
   "used_by": [
    "ftx-fran-en-av-varldens-storsta-kryptoborser-till-total-kollaps"
   ],
@@ -842,7 +842,7 @@
   "bytes": 104918
  },
  "/wp-content/uploads/2022/11/Skarmavbild-2022-11-11-kl.-23.54.23.png": {
-  "file": "import/images/2022/11/Skarmavbild-2022-11-11-kl.-23.54.23.png",
+  "file": "src/assets/uploads/2022/11/Skarmavbild-2022-11-11-kl.-23.54.23.png",
   "used_by": [
    "trine-recension-om-investering-i-solenergi"
   ],
@@ -853,7 +853,7 @@
   "bytes": 26453
  },
  "/wp-content/uploads/2022/11/Skarmavbild-2022-11-12-kl.-00.31.56.png": {
-  "file": "import/images/2022/11/Skarmavbild-2022-11-12-kl.-00.31.56.png",
+  "file": "src/assets/uploads/2022/11/Skarmavbild-2022-11-12-kl.-00.31.56.png",
   "used_by": [
    "trine-recension-om-investering-i-solenergi"
   ],
@@ -864,7 +864,7 @@
   "bytes": 32092
  },
  "/wp-content/uploads/2022/11/Skarmbild-74.png": {
-  "file": "import/images/2022/11/Skarmbild-74.png",
+  "file": "src/assets/uploads/2022/11/Skarmbild-74.png",
   "used_by": [
    "vad-ar-fire-en-guide-for-att-bli-ekonomiskt-fri"
   ],
@@ -875,7 +875,7 @@
   "bytes": 72547
  },
  "/wp-content/uploads/2022/11/Skarmbild-77.png": {
-  "file": "import/images/2022/11/Skarmbild-77.png",
+  "file": "src/assets/uploads/2022/11/Skarmbild-77.png",
   "used_by": [
    "trine-recension-om-investering-i-solenergi"
   ],
@@ -886,7 +886,7 @@
   "bytes": 23527
  },
  "/wp-content/uploads/2022/11/Skarmbild-79.png": {
-  "file": "import/images/2022/11/Skarmbild-79.png",
+  "file": "src/assets/uploads/2022/11/Skarmbild-79.png",
   "used_by": [
    "ftx-fran-en-av-varldens-storsta-kryptoborser-till-total-kollaps"
   ],
@@ -897,7 +897,7 @@
   "bytes": 48842
  },
  "/wp-content/uploads/2022/11/Skarmbild-84.png": {
-  "file": "import/images/2022/11/Skarmbild-84.png",
+  "file": "src/assets/uploads/2022/11/Skarmbild-84.png",
   "used_by": [
    "en-recension-om-kameo-2022"
   ],
@@ -908,7 +908,7 @@
   "bytes": 157761
  },
  "/wp-content/uploads/2022/11/TRINE.jpg": {
-  "file": "import/images/2022/11/TRINE.jpg",
+  "file": "src/assets/uploads/2022/11/TRINE.jpg",
   "used_by": [
    "trine-recension-om-investering-i-solenergi"
   ],
@@ -919,7 +919,7 @@
   "bytes": 70613
  },
  "/wp-content/uploads/2022/11/Y8CZOfrW_400x400-1.jpg": {
-  "file": "import/images/2022/11/Y8CZOfrW_400x400-1.jpg",
+  "file": "src/assets/uploads/2022/11/Y8CZOfrW_400x400-1.jpg",
   "used_by": [
    "finanstwitter-bli-inspirerad-av-andra"
   ],
@@ -930,7 +930,7 @@
   "bytes": 16661
  },
  "/wp-content/uploads/2022/11/ezgif.com-gif-maker-1-1.jpg": {
-  "file": "import/images/2022/11/ezgif.com-gif-maker-1-1.jpg",
+  "file": "src/assets/uploads/2022/11/ezgif.com-gif-maker-1-1.jpg",
   "used_by": [
    "ftx-fran-en-av-varldens-storsta-kryptoborser-till-total-kollaps"
   ],
@@ -941,7 +941,7 @@
   "bytes": 220164
  },
  "/wp-content/uploads/2022/11/nicklas-1.jpg": {
-  "file": "import/images/2022/11/nicklas-1.jpg",
+  "file": "src/assets/uploads/2022/11/nicklas-1.jpg",
   "used_by": [
    "finanstwitter-bli-inspirerad-av-andra"
   ],
@@ -954,7 +954,7 @@
   "bytes": 15203
  },
  "/wp-content/uploads/2022/11/trine-ab-logo-vector-removebg-preview.png": {
-  "file": "import/images/2022/11/trine-ab-logo-vector-removebg-preview.png",
+  "file": "src/assets/uploads/2022/11/trine-ab-logo-vector-removebg-preview.png",
   "used_by": [
    "trine-adrecord",
    "trine-recension-om-investering-i-solenergi"
@@ -968,7 +968,7 @@
   "bytes": 24539
  },
  "/wp-content/uploads/2022/11/twitterreal-2.jpg": {
-  "file": "import/images/2022/11/twitterreal-2.jpg",
+  "file": "src/assets/uploads/2022/11/twitterreal-2.jpg",
   "used_by": [
    "finanstwitter-bli-inspirerad-av-andra"
   ],
@@ -979,7 +979,7 @@
   "bytes": 27926
  },
  "/wp-content/uploads/2022/11/v1FQvl3-_400x400-1.jpg": {
-  "file": "import/images/2022/11/v1FQvl3-_400x400-1.jpg",
+  "file": "src/assets/uploads/2022/11/v1FQvl3-_400x400-1.jpg",
   "used_by": [
    "finanstwitter-bli-inspirerad-av-andra"
   ],
@@ -992,7 +992,7 @@
   "bytes": 24256
  },
  "/wp-content/uploads/2022/12/ADP.jpg": {
-  "file": "import/images/2022/12/ADP.jpg",
+  "file": "src/assets/uploads/2022/12/ADP.jpg",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1005,7 +1005,7 @@
   "bytes": 283850
  },
  "/wp-content/uploads/2022/12/AFL.jpg": {
-  "file": "import/images/2022/12/AFL.jpg",
+  "file": "src/assets/uploads/2022/12/AFL.jpg",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1018,7 +1018,7 @@
   "bytes": 277286
  },
  "/wp-content/uploads/2022/12/Assa-Abloy.png": {
-  "file": "import/images/2022/12/Assa-Abloy.png",
+  "file": "src/assets/uploads/2022/12/Assa-Abloy.png",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1031,7 +1031,7 @@
   "bytes": 95644
  },
  "/wp-content/uploads/2022/12/Investor.png": {
-  "file": "import/images/2022/12/Investor.png",
+  "file": "src/assets/uploads/2022/12/Investor.png",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1044,7 +1044,7 @@
   "bytes": 86552
  },
  "/wp-content/uploads/2022/12/Its-about-Time-in-the-Market-not-timing-1.png": {
-  "file": "import/images/2022/12/Its-about-Time-in-the-Market-not-timing-1.png",
+  "file": "src/assets/uploads/2022/12/Its-about-Time-in-the-Market-not-timing-1.png",
   "used_by": [
    "10-basta-tipsen-for-att-bli-ekonomiskt-oberoende"
   ],
@@ -1055,7 +1055,7 @@
   "bytes": 95085
  },
  "/wp-content/uploads/2022/12/ROP.jpg": {
-  "file": "import/images/2022/12/ROP.jpg",
+  "file": "src/assets/uploads/2022/12/ROP.jpg",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1068,7 +1068,7 @@
   "bytes": 273023
  },
  "/wp-content/uploads/2022/12/SYY.jpg": {
-  "file": "import/images/2022/12/SYY.jpg",
+  "file": "src/assets/uploads/2022/12/SYY.jpg",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1081,7 +1081,7 @@
   "bytes": 294507
  },
  "/wp-content/uploads/2022/12/Tesla-1.jpg": {
-  "file": "import/images/2022/12/Tesla-1.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla-1.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1094,7 +1094,7 @@
   "bytes": 668641
  },
  "/wp-content/uploads/2022/12/Tesla-models-1.jpg": {
-  "file": "import/images/2022/12/Tesla-models-1.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla-models-1.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1105,7 +1105,7 @@
   "bytes": 128999
  },
  "/wp-content/uploads/2022/12/Tesla2.jpg": {
-  "file": "import/images/2022/12/Tesla2.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla2.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1118,7 +1118,7 @@
   "bytes": 535146
  },
  "/wp-content/uploads/2022/12/Tesla5.jpg": {
-  "file": "import/images/2022/12/Tesla5.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla5.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1131,7 +1131,7 @@
   "bytes": 581846
  },
  "/wp-content/uploads/2022/12/Tesla6.jpg": {
-  "file": "import/images/2022/12/Tesla6.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla6.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1144,7 +1144,7 @@
   "bytes": 91821
  },
  "/wp-content/uploads/2022/12/Tesla7.jpg": {
-  "file": "import/images/2022/12/Tesla7.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla7.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1157,7 +1157,7 @@
   "bytes": 245680
  },
  "/wp-content/uploads/2022/12/Tesla8.jpg": {
-  "file": "import/images/2022/12/Tesla8.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla8.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1170,7 +1170,7 @@
   "bytes": 340518
  },
  "/wp-content/uploads/2022/12/Tesla9.jpg": {
-  "file": "import/images/2022/12/Tesla9.jpg",
+  "file": "src/assets/uploads/2022/12/Tesla9.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1183,7 +1183,7 @@
   "bytes": 256209
  },
  "/wp-content/uploads/2022/12/Teslas-historia1.jpg": {
-  "file": "import/images/2022/12/Teslas-historia1.jpg",
+  "file": "src/assets/uploads/2022/12/Teslas-historia1.jpg",
   "used_by": [
    "senaste-inlaggen",
    "teslas-historia-och-framtid-en-djupdykning"
@@ -1195,7 +1195,7 @@
   "bytes": 305130
  },
  "/wp-content/uploads/2022/12/Utdelningsaktiercompressed.jpeg": {
-  "file": "import/images/2022/12/Utdelningsaktiercompressed.jpeg",
+  "file": "src/assets/uploads/2022/12/Utdelningsaktiercompressed.jpeg",
   "used_by": [
    "senaste-inlaggen",
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
@@ -1207,7 +1207,7 @@
   "bytes": 111773
  },
  "/wp-content/uploads/2022/12/alternativa-investeringar.jpg": {
-  "file": "import/images/2022/12/alternativa-investeringar.jpg",
+  "file": "src/assets/uploads/2022/12/alternativa-investeringar.jpg",
   "used_by": [
    "alternativa-investeringar"
   ],
@@ -1218,7 +1218,7 @@
   "bytes": 75825
  },
  "/wp-content/uploads/2022/12/ekonomiskt-oberoende-1.jpg": {
-  "file": "import/images/2022/12/ekonomiskt-oberoende-1.jpg",
+  "file": "src/assets/uploads/2022/12/ekonomiskt-oberoende-1.jpg",
   "used_by": [
    "10-basta-tipsen-for-att-bli-ekonomiskt-oberoende",
    "senaste-inlaggen"
@@ -1230,7 +1230,7 @@
   "bytes": 49387
  },
  "/wp-content/uploads/2022/12/tesla3.jpg": {
-  "file": "import/images/2022/12/tesla3.jpg",
+  "file": "src/assets/uploads/2022/12/tesla3.jpg",
   "used_by": [
    "teslas-historia-och-framtid-en-djupdykning"
   ],
@@ -1243,7 +1243,7 @@
   "bytes": 502422
  },
  "/wp-content/uploads/2022/12/utdelningsaktier1.png": {
-  "file": "import/images/2022/12/utdelningsaktier1.png",
+  "file": "src/assets/uploads/2022/12/utdelningsaktier1.png",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1254,7 +1254,7 @@
   "bytes": 74952
  },
  "/wp-content/uploads/2022/12/utdelningsaktier2.png": {
-  "file": "import/images/2022/12/utdelningsaktier2.png",
+  "file": "src/assets/uploads/2022/12/utdelningsaktier2.png",
   "used_by": [
    "tips-pa-utdelningsaktier-det-har-ar-dividend-knights"
   ],
@@ -1265,7 +1265,7 @@
   "bytes": 48429
  },
  "/wp-content/uploads/2023/01/0x0.webp": {
-  "file": "import/images/2023/01/0x0.webp",
+  "file": "src/assets/uploads/2023/01/0x0.webp",
   "used_by": [
    "varldens-basta-investerare"
   ],
@@ -1276,7 +1276,7 @@
   "bytes": 24372
  },
  "/wp-content/uploads/2023/01/1200x628_META_OG_Image_with_logo.webp": {
-  "file": "import/images/2023/01/1200x628_META_OG_Image_with_logo.webp",
+  "file": "src/assets/uploads/2023/01/1200x628_META_OG_Image_with_logo.webp",
   "used_by": [
    "nordnet-one-omdome",
    "senaste-inlaggen"
@@ -1288,7 +1288,7 @@
   "bytes": 35272
  },
  "/wp-content/uploads/2023/01/220223-john-templeton.webp": {
-  "file": "import/images/2023/01/220223-john-templeton.webp",
+  "file": "src/assets/uploads/2023/01/220223-john-templeton.webp",
   "used_by": [
    "varldens-basta-investerare"
   ],
@@ -1299,7 +1299,7 @@
   "bytes": 130142
  },
  "/wp-content/uploads/2023/01/Aker-Utdelningshistorik.webp": {
-  "file": "import/images/2023/01/Aker-Utdelningshistorik.webp",
+  "file": "src/assets/uploads/2023/01/Aker-Utdelningshistorik.webp",
   "used_by": [
    "norska-utdelningsaktier"
   ],
@@ -1312,7 +1312,7 @@
   "bytes": 32296
  },
  "/wp-content/uploads/2023/01/Benjamin_Graham_1894-1976_portrait_on_23_March_1950.webp": {
-  "file": "import/images/2023/01/Benjamin_Graham_1894-1976_portrait_on_23_March_1950.webp",
+  "file": "src/assets/uploads/2023/01/Benjamin_Graham_1894-1976_portrait_on_23_March_1950.webp",
   "used_by": [
    "varldens-basta-investerare"
   ],
@@ -1325,7 +1325,7 @@
   "bytes": 26170
  },
  "/wp-content/uploads/2023/01/George-Soros.webp": {
-  "file": "import/images/2023/01/George-Soros.webp",
+  "file": "src/assets/uploads/2023/01/George-Soros.webp",
   "used_by": [
    "varldens-basta-investerare"
   ],
@@ -1338,7 +1338,7 @@
   "bytes": 15838
  },
  "/wp-content/uploads/2023/01/Hemligheter-fran.jpg": {
-  "file": "import/images/2023/01/Hemligheter-fran.jpg",
+  "file": "src/assets/uploads/2023/01/Hemligheter-fran.jpg",
   "used_by": [
    "senaste-inlaggen",
    "varldens-basta-investerare"
@@ -1350,7 +1350,7 @@
   "bytes": 134259
  },
  "/wp-content/uploads/2023/01/IMG_1614-1-472x1024-1.webp": {
-  "file": "import/images/2023/01/IMG_1614-1-472x1024-1.webp",
+  "file": "src/assets/uploads/2023/01/IMG_1614-1-472x1024-1.webp",
   "used_by": [
    "vi-finns-nu-pa-borskollen"
   ],
@@ -1363,7 +1363,7 @@
   "bytes": 37462
  },
  "/wp-content/uploads/2023/01/Investeringskunskap-logga-mobil.webp": {
-  "file": "import/images/2023/01/Investeringskunskap-logga-mobil.webp",
+  "file": "src/assets/uploads/2023/01/Investeringskunskap-logga-mobil.webp",
   "used_by": [
    "_site"
   ],
@@ -1374,7 +1374,7 @@
   "bytes": 8510
  },
  "/wp-content/uploads/2023/01/Nordnet-One.webp": {
-  "file": "import/images/2023/01/Nordnet-One.webp",
+  "file": "src/assets/uploads/2023/01/Nordnet-One.webp",
   "used_by": [
    "nordnet-one-omdome"
   ],
@@ -1387,7 +1387,7 @@
   "bytes": 43700
  },
  "/wp-content/uploads/2023/01/Norska-utdelningsaktier-1.webp": {
-  "file": "import/images/2023/01/Norska-utdelningsaktier-1.webp",
+  "file": "src/assets/uploads/2023/01/Norska-utdelningsaktier-1.webp",
   "used_by": [
    "norska-utdelningsaktier",
    "senaste-inlaggen"
@@ -1399,7 +1399,7 @@
   "bytes": 81040
  },
  "/wp-content/uploads/2023/01/Ofralse-1.webp": {
-  "file": "import/images/2023/01/Ofralse-1.webp",
+  "file": "src/assets/uploads/2023/01/Ofralse-1.webp",
   "used_by": [
    "senaste-inlaggen",
    "vi-finns-nu-pa-borskollen"
@@ -1411,7 +1411,7 @@
   "bytes": 18532
  },
  "/wp-content/uploads/2023/01/Ofralse2.webp": {
-  "file": "import/images/2023/01/Ofralse2.webp",
+  "file": "src/assets/uploads/2023/01/Ofralse2.webp",
   "used_by": [
    "hur-stor-buffert-ska-man-ha-som-husagare"
   ],
@@ -1424,7 +1424,7 @@
   "bytes": 61282
  },
  "/wp-content/uploads/2023/01/Salmar.webp": {
-  "file": "import/images/2023/01/Salmar.webp",
+  "file": "src/assets/uploads/2023/01/Salmar.webp",
   "used_by": [
    "norska-utdelningsaktier"
   ],
@@ -1437,7 +1437,7 @@
   "bytes": 30774
  },
  "/wp-content/uploads/2023/01/Skarmavbild-2022-12-31-kl.-14.09.38-1-1.webp": {
-  "file": "import/images/2023/01/Skarmavbild-2022-12-31-kl.-14.09.38-1-1.webp",
+  "file": "src/assets/uploads/2023/01/Skarmavbild-2022-12-31-kl.-14.09.38-1-1.webp",
   "used_by": [
    "investera-i-guld"
   ],
@@ -1450,7 +1450,7 @@
   "bytes": 63422
  },
  "/wp-content/uploads/2023/01/Telenor.webp": {
-  "file": "import/images/2023/01/Telenor.webp",
+  "file": "src/assets/uploads/2023/01/Telenor.webp",
   "used_by": [
    "norska-utdelningsaktier"
   ],
@@ -1463,7 +1463,7 @@
   "bytes": 68120
  },
  "/wp-content/uploads/2023/01/Tomra-Systems.webp": {
-  "file": "import/images/2023/01/Tomra-Systems.webp",
+  "file": "src/assets/uploads/2023/01/Tomra-Systems.webp",
   "used_by": [
    "norska-utdelningsaktier"
   ],
@@ -1476,7 +1476,7 @@
   "bytes": 19246
  },
  "/wp-content/uploads/2023/01/Yara.webp": {
-  "file": "import/images/2023/01/Yara.webp",
+  "file": "src/assets/uploads/2023/01/Yara.webp",
   "used_by": [
    "norska-utdelningsaktier"
   ],
@@ -1489,7 +1489,7 @@
   "bytes": 49062
  },
  "/wp-content/uploads/2023/01/buffert.webp": {
-  "file": "import/images/2023/01/buffert.webp",
+  "file": "src/assets/uploads/2023/01/buffert.webp",
   "used_by": [
    "hur-stor-buffert-ska-man-ha-som-husagare",
    "senaste-inlaggen"
@@ -1501,7 +1501,7 @@
   "bytes": 296732
  },
  "/wp-content/uploads/2023/01/kopaguld.webp": {
-  "file": "import/images/2023/01/kopaguld.webp",
+  "file": "src/assets/uploads/2023/01/kopaguld.webp",
   "used_by": [
    "investera-i-guld",
    "senaste-inlaggen"
@@ -1513,7 +1513,7 @@
   "bytes": 28032
  },
  "/wp-content/uploads/2023/01/kopaguld2.webp": {
-  "file": "import/images/2023/01/kopaguld2.webp",
+  "file": "src/assets/uploads/2023/01/kopaguld2.webp",
   "used_by": [
    "investera-i-guld"
   ],
@@ -1526,7 +1526,7 @@
   "bytes": 21712
  },
  "/wp-content/uploads/2023/01/kopaguld3.webp": {
-  "file": "import/images/2023/01/kopaguld3.webp",
+  "file": "src/assets/uploads/2023/01/kopaguld3.webp",
   "used_by": [
    "investera-i-guld"
   ],
@@ -1539,7 +1539,7 @@
   "bytes": 208448
  },
  "/wp-content/uploads/2023/01/lynch.webp": {
-  "file": "import/images/2023/01/lynch.webp",
+  "file": "src/assets/uploads/2023/01/lynch.webp",
   "used_by": [
    "varldens-basta-investerare"
   ],
@@ -1552,7 +1552,7 @@
   "bytes": 44786
  },
  "/wp-content/uploads/2023/01/nordnet-og-image-1.webp": {
-  "file": "import/images/2023/01/nordnet-og-image-1.webp",
+  "file": "src/assets/uploads/2023/01/nordnet-og-image-1.webp",
   "used_by": [
    "nordnet-adtraction",
    "nordnet-one-omdome"
@@ -1564,7 +1564,7 @@
   "bytes": 8472
  },
  "/wp-content/uploads/2023/01/sparebank.webp": {
-  "file": "import/images/2023/01/sparebank.webp",
+  "file": "src/assets/uploads/2023/01/sparebank.webp",
   "used_by": [
    "norska-utdelningsaktier"
   ],
@@ -1575,7 +1575,7 @@
   "bytes": 60996
  },
  "/wp-content/uploads/2023/02/F-35.webp": {
-  "file": "import/images/2023/02/F-35.webp",
+  "file": "src/assets/uploads/2023/02/F-35.webp",
   "used_by": [
    "investera-i-forsvarsaktier"
   ],
@@ -1588,7 +1588,7 @@
   "bytes": 18786
  },
  "/wp-content/uploads/2023/02/FLIGHTSENSE.webp": {
-  "file": "import/images/2023/02/FLIGHTSENSE.webp",
+  "file": "src/assets/uploads/2023/02/FLIGHTSENSE.webp",
   "used_by": [
    "investera-i-forsvarsaktier"
   ],
@@ -1601,7 +1601,7 @@
   "bytes": 129568
  },
  "/wp-content/uploads/2023/02/Investera-i-forsvarsaktier.webp": {
-  "file": "import/images/2023/02/Investera-i-forsvarsaktier.webp",
+  "file": "src/assets/uploads/2023/02/Investera-i-forsvarsaktier.webp",
   "used_by": [
    "investera-i-forsvarsaktier",
    "senaste-inlaggen"
@@ -1613,7 +1613,7 @@
   "bytes": 5778
  },
  "/wp-content/uploads/2023/02/Kanadensiska.webp": {
-  "file": "import/images/2023/02/Kanadensiska.webp",
+  "file": "src/assets/uploads/2023/02/Kanadensiska.webp",
   "used_by": [
    "kanadensiska-utdelningsaktier",
    "senaste-inlaggen"
@@ -1625,7 +1625,7 @@
   "bytes": 51878
  },
  "/wp-content/uploads/2023/02/NASAMS.webp": {
-  "file": "import/images/2023/02/NASAMS.webp",
+  "file": "src/assets/uploads/2023/02/NASAMS.webp",
   "used_by": [
    "investera-i-forsvarsaktier"
   ],
@@ -1638,7 +1638,7 @@
   "bytes": 56460
  },
  "/wp-content/uploads/2023/02/Ofralse.webp": {
-  "file": "import/images/2023/02/Ofralse.webp",
+  "file": "src/assets/uploads/2023/02/Ofralse.webp",
   "used_by": [
    "investera-i-forsvarsaktier"
   ],
@@ -1651,7 +1651,7 @@
   "bytes": 26556
  },
  "/wp-content/uploads/2023/02/Pratt-and-Whitney-GTF-Enginee0bcb8b.webp": {
-  "file": "import/images/2023/02/Pratt-and-Whitney-GTF-Enginee0bcb8b.webp",
+  "file": "src/assets/uploads/2023/02/Pratt-and-Whitney-GTF-Enginee0bcb8b.webp",
   "used_by": [
    "investera-i-forsvarsaktier"
   ],
@@ -1662,7 +1662,7 @@
   "bytes": 40714
  },
  "/wp-content/uploads/2023/02/Ranta-Pa-Ranta-kalkylator.webp": {
-  "file": "import/images/2023/02/Ranta-Pa-Ranta-kalkylator.webp",
+  "file": "src/assets/uploads/2023/02/Ranta-Pa-Ranta-kalkylator.webp",
   "used_by": [
    "ranta-pa-ranta-kalkylator"
   ],
@@ -1673,7 +1673,7 @@
   "bytes": 20692
  },
  "/wp-content/uploads/2023/02/Skarmbild-116-1.webp": {
-  "file": "import/images/2023/02/Skarmbild-116-1.webp",
+  "file": "src/assets/uploads/2023/02/Skarmbild-116-1.webp",
   "used_by": [
    "kanadensiska-utdelningsaktier"
   ],
@@ -1684,7 +1684,7 @@
   "bytes": 29274
  },
  "/wp-content/uploads/2023/02/Skarmbild-2023-02-27-190323.webp": {
-  "file": "import/images/2023/02/Skarmbild-2023-02-27-190323.webp",
+  "file": "src/assets/uploads/2023/02/Skarmbild-2023-02-27-190323.webp",
   "used_by": [
    "aktieinvest-omdome"
   ],
@@ -1697,7 +1697,7 @@
   "bytes": 55070
  },
  "/wp-content/uploads/2023/02/Skarmbild-2023-02-27-194305.webp": {
-  "file": "import/images/2023/02/Skarmbild-2023-02-27-194305.webp",
+  "file": "src/assets/uploads/2023/02/Skarmbild-2023-02-27-194305.webp",
   "used_by": [
    "aktieinvest-omdome"
   ],
@@ -1708,7 +1708,7 @@
   "bytes": 20060
  },
  "/wp-content/uploads/2023/02/Slutvarde-_.webp": {
-  "file": "import/images/2023/02/Slutvarde-_.webp",
+  "file": "src/assets/uploads/2023/02/Slutvarde-_.webp",
   "used_by": [
    "ranta-pa-ranta-kalkylator"
   ],
@@ -1719,7 +1719,7 @@
   "bytes": 7886
  },
  "/wp-content/uploads/2023/02/USA-i-jamforelse-med-Kanada.webp": {
-  "file": "import/images/2023/02/USA-i-jamforelse-med-Kanada.webp",
+  "file": "src/assets/uploads/2023/02/USA-i-jamforelse-med-Kanada.webp",
   "used_by": [
    "kanadensiska-utdelningsaktier"
   ],
@@ -1730,7 +1730,7 @@
   "bytes": 80732
  },
  "/wp-content/uploads/2023/02/Visualisering-av-ranta-pa-ranta.webp": {
-  "file": "import/images/2023/02/Visualisering-av-ranta-pa-ranta.webp",
+  "file": "src/assets/uploads/2023/02/Visualisering-av-ranta-pa-ranta.webp",
   "used_by": [
    "ranta-pa-ranta-kalkylator"
   ],
@@ -1743,7 +1743,7 @@
   "bytes": 58028
  },
  "/wp-content/uploads/2023/02/aktieinvest-logga-300x51-1.webp": {
-  "file": "import/images/2023/02/aktieinvest-logga-300x51-1.webp",
+  "file": "src/assets/uploads/2023/02/aktieinvest-logga-300x51-1.webp",
   "used_by": [
    "aktieinvest-adrecord",
    "aktieinvest-omdome"
@@ -1757,7 +1757,7 @@
   "bytes": 4376
  },
  "/wp-content/uploads/2023/03/Aktieinvest-Omdome.webp": {
-  "file": "import/images/2023/03/Aktieinvest-Omdome.webp",
+  "file": "src/assets/uploads/2023/03/Aktieinvest-Omdome.webp",
   "used_by": [
    "aktieinvest-omdome",
    "senaste-inlaggen"
@@ -1769,7 +1769,7 @@
   "bytes": 8430
  },
  "/wp-content/uploads/2023/03/Investera-i-forsvarsaktier-750x375-1.webp": {
-  "file": "import/images/2023/03/Investera-i-forsvarsaktier-750x375-1.webp",
+  "file": "src/assets/uploads/2023/03/Investera-i-forsvarsaktier-750x375-1.webp",
   "used_by": [
    "investera-i-rymden-rymdaktier-att-kanna-till",
    "senaste-inlaggen"
@@ -1781,7 +1781,7 @@
   "bytes": 25520
  },
  "/wp-content/uploads/2023/03/Investera-i-indexfonder.webp": {
-  "file": "import/images/2023/03/Investera-i-indexfonder.webp",
+  "file": "src/assets/uploads/2023/03/Investera-i-indexfonder.webp",
   "used_by": [
    "investera-i-indexfonder",
    "senaste-inlaggen"
@@ -1793,7 +1793,7 @@
   "bytes": 86246
  },
  "/wp-content/uploads/2023/03/Skarmbild-131.png": {
-  "file": "import/images/2023/03/Skarmbild-131.png",
+  "file": "src/assets/uploads/2023/03/Skarmbild-131.png",
   "used_by": [
    "investera-i-rymden-rymdaktier-att-kanna-till"
   ],
@@ -1806,7 +1806,7 @@
   "bytes": 73278
  },
  "/wp-content/uploads/2023/03/bvfa-s-space-0007.webp": {
-  "file": "import/images/2023/03/bvfa-s-space-0007.webp",
+  "file": "src/assets/uploads/2023/03/bvfa-s-space-0007.webp",
   "used_by": [
    "investera-i-rymden-rymdaktier-att-kanna-till"
   ],
@@ -1819,7 +1819,7 @@
   "bytes": 116078
  },
  "/wp-content/uploads/2023/03/patrick-weissenberger-uJhgEXPqSPk-unsplash.webp": {
-  "file": "import/images/2023/03/patrick-weissenberger-uJhgEXPqSPk-unsplash.webp",
+  "file": "src/assets/uploads/2023/03/patrick-weissenberger-uJhgEXPqSPk-unsplash.webp",
   "used_by": [
    "investera-i-indexfonder"
   ],
@@ -1830,7 +1830,7 @@
   "bytes": 66604
  },
  "/wp-content/uploads/2023/03/spaceFund-1.webp": {
-  "file": "import/images/2023/03/spaceFund-1.webp",
+  "file": "src/assets/uploads/2023/03/spaceFund-1.webp",
   "used_by": [
    "investera-i-rymden-rymdaktier-att-kanna-till"
   ],
@@ -1841,7 +1841,7 @@
   "bytes": 29464
  },
  "/wp-content/uploads/2023/04/CDZ.TO_YahooFinanceChart.png": {
-  "file": "import/images/2023/04/CDZ.TO_YahooFinanceChart.png",
+  "file": "src/assets/uploads/2023/04/CDZ.TO_YahooFinanceChart.png",
   "used_by": [
    "europeiska-investmentbolag"
   ],
@@ -1854,7 +1854,7 @@
   "bytes": 286643
  },
  "/wp-content/uploads/2023/04/Investera-i-forsvarsaktier-750x375-1.jpg": {
-  "file": "import/images/2023/04/Investera-i-forsvarsaktier-750x375-1.jpg",
+  "file": "src/assets/uploads/2023/04/Investera-i-forsvarsaktier-750x375-1.jpg",
   "used_by": [
    "europeiska-investmentbolag",
    "senaste-inlaggen"
@@ -1866,7 +1866,7 @@
   "bytes": 40361
  },
  "/wp-content/uploads/2023/05/Ofralse-1.webp": {
-  "file": "import/images/2023/05/Ofralse-1.webp",
+  "file": "src/assets/uploads/2023/05/Ofralse-1.webp",
   "used_by": [
    "finska-utdelningsaktier"
   ],
@@ -1877,7 +1877,7 @@
   "bytes": 52678
  },
  "/wp-content/uploads/2023/05/Ofralse.webp": {
-  "file": "import/images/2023/05/Ofralse.webp",
+  "file": "src/assets/uploads/2023/05/Ofralse.webp",
   "used_by": [
    "finska-utdelningsaktier",
    "senaste-inlaggen"
@@ -1889,7 +1889,7 @@
   "bytes": 356444
  },
  "/wp-content/uploads/2023/06/Chile-GDP-growth.svg": {
-  "file": "import/images/2023/06/Chile-GDP-growth.svg",
+  "file": "src/assets/uploads/2023/06/Chile-GDP-growth.svg",
   "used_by": [
    "investeringsmojligheter-i-tillvaxtmarknader"
   ],
@@ -1902,7 +1902,7 @@
   "bytes": 8821
  },
  "/wp-content/uploads/2023/06/caio-silva-5W8fDb8f89s-unsplash.jpg": {
-  "file": "import/images/2023/06/caio-silva-5W8fDb8f89s-unsplash.jpg",
+  "file": "src/assets/uploads/2023/06/caio-silva-5W8fDb8f89s-unsplash.jpg",
   "used_by": [
    "investeringsmojligheter-i-tillvaxtmarknader"
   ],
@@ -1913,7 +1913,7 @@
   "bytes": 719162
  },
  "/wp-content/uploads/2023/06/kenny-eliason-maJDOJSmMoo-unsplash.jpg": {
-  "file": "import/images/2023/06/kenny-eliason-maJDOJSmMoo-unsplash.jpg",
+  "file": "src/assets/uploads/2023/06/kenny-eliason-maJDOJSmMoo-unsplash.jpg",
   "used_by": [
    "investeringsmojligheter-i-tillvaxtmarknader",
    "senaste-inlaggen"
@@ -1925,7 +1925,7 @@
   "bytes": 374839
  },
  "/wp-content/uploads/2023/06/nu.png": {
-  "file": "import/images/2023/06/nu.png",
+  "file": "src/assets/uploads/2023/06/nu.png",
   "used_by": [
    "hur-du-kommer-igang-med-ett-barnsparande"
   ],
@@ -1936,7 +1936,7 @@
   "bytes": 87019
  },
  "/wp-content/uploads/2023/07/Barnsparande.webp": {
-  "file": "import/images/2023/07/Barnsparande.webp",
+  "file": "src/assets/uploads/2023/07/Barnsparande.webp",
   "used_by": [
    "hur-du-kommer-igang-med-ett-barnsparande",
    "senaste-inlaggen"
@@ -1948,7 +1948,7 @@
   "bytes": 288310
  },
  "/wp-content/uploads/2023/07/akademin-spara-till-barn-graf.png": {
-  "file": "import/images/2023/07/akademin-spara-till-barn-graf.png",
+  "file": "src/assets/uploads/2023/07/akademin-spara-till-barn-graf.png",
   "used_by": [
    "hur-du-kommer-igang-med-ett-barnsparande"
   ],
@@ -1961,7 +1961,7 @@
   "bytes": 4439
  },
  "/wp-content/uploads/2023/09/Blue-and-White-Gradient-Finance-Youtube-Thumbnail.png": {
-  "file": "import/images/2023/09/Blue-and-White-Gradient-Finance-Youtube-Thumbnail.png",
+  "file": "src/assets/uploads/2023/09/Blue-and-White-Gradient-Finance-Youtube-Thumbnail.png",
   "used_by": [
    "basta-fonderna-2023",
    "senaste-inlaggen"
@@ -1973,7 +1973,7 @@
   "bytes": 67598
  },
  "/wp-content/uploads/2023/09/Ofralse2.webp": {
-  "file": "import/images/2023/09/Ofralse2.webp",
+  "file": "src/assets/uploads/2023/09/Ofralse2.webp",
   "used_by": [
    "basta-fonderna-2023"
   ],
@@ -1984,7 +1984,7 @@
   "bytes": 18046
  },
  "/wp-content/uploads/2023/09/Skarmbild-2023-09-17-182332.png": {
-  "file": "import/images/2023/09/Skarmbild-2023-09-17-182332.png",
+  "file": "src/assets/uploads/2023/09/Skarmbild-2023-09-17-182332.png",
   "used_by": [
    "basta-fonderna-2023"
   ],
@@ -1997,7 +1997,7 @@
   "bytes": 48770
  },
  "/wp-content/uploads/2023/09/Skarmbild_2023-09-15_115924-removebg-preview.webp": {
-  "file": "import/images/2023/09/Skarmbild_2023-09-15_115924-removebg-preview.webp",
+  "file": "src/assets/uploads/2023/09/Skarmbild_2023-09-15_115924-removebg-preview.webp",
   "used_by": [
    "basta-fonderna-2023"
   ],
@@ -2010,7 +2010,7 @@
   "bytes": 29960
  },
  "/wp-content/uploads/2023/09/blog_ms-awd2023.webp": {
-  "file": "import/images/2023/09/blog_ms-awd2023.webp",
+  "file": "src/assets/uploads/2023/09/blog_ms-awd2023.webp",
   "used_by": [
    "basta-fonderna-2023"
   ],
@@ -2023,7 +2023,7 @@
   "bytes": 60680
  },
  "/wp-content/uploads/2023/10/DALL·E-2023-10-16-10.22.05-Render-of-a-3D-space-where-the-globe-stands-as-a-central-piece.-Orbiting-around-the-globe-are-3D-icons-of-a-bull-a-scroll-and-a-house-each-connecte-1.png": {
-  "file": "import/images/2023/10/DALL·E-2023-10-16-10.22.05-Render-of-a-3D-space-where-the-globe-stands-as-a-central-piece.-Orbiting-around-the-globe-are-3D-icons-of-a-bull-a-scroll-and-a-house-each-connecte-1.png",
+  "file": "src/assets/uploads/2023/10/DALL·E-2023-10-16-10.22.05-Render-of-a-3D-space-where-the-globe-stands-as-a-central-piece.-Orbiting-around-the-globe-are-3D-icons-of-a-bull-a-scroll-and-a-house-each-connecte-1.png",
   "used_by": [
    "basta-etferna"
   ],
@@ -2034,7 +2034,7 @@
   "bytes": 483138
  },
  "/wp-content/uploads/2023/10/economic-outlook-projections-optimized-rgb.png": {
-  "file": "import/images/2023/10/economic-outlook-projections-optimized-rgb.png",
+  "file": "src/assets/uploads/2023/10/economic-outlook-projections-optimized-rgb.png",
   "used_by": [
    "basta-etferna"
   ],
@@ -2047,7 +2047,7 @@
   "bytes": 667963
  },
  "/wp-content/uploads/2023/10/image_with_text.jpg": {
-  "file": "import/images/2023/10/image_with_text.jpg",
+  "file": "src/assets/uploads/2023/10/image_with_text.jpg",
   "used_by": [
    "investera-i-halvledarbolag",
    "senaste-inlaggen"
@@ -2059,7 +2059,7 @@
   "bytes": 133661
  },
  "/wp-content/uploads/2023/10/rsz_1semiconductor_revenue_chart.png": {
-  "file": "import/images/2023/10/rsz_1semiconductor_revenue_chart.png",
+  "file": "src/assets/uploads/2023/10/rsz_1semiconductor_revenue_chart.png",
   "used_by": [
    "investera-i-halvledarbolag"
   ],
@@ -2072,7 +2072,7 @@
   "bytes": 165977
  },
  "/wp-content/uploads/2023/11/Blue-and-White-Gradient-Finance-Youtube-Thumbnail-750x375-1.webp": {
-  "file": "import/images/2023/11/Blue-and-White-Gradient-Finance-Youtube-Thumbnail-750x375-1.webp",
+  "file": "src/assets/uploads/2023/11/Blue-and-White-Gradient-Finance-Youtube-Thumbnail-750x375-1.webp",
   "used_by": [
    "13-smarta-satt-att-spara-pengar-som-student",
    "senaste-inlaggen"
@@ -2084,7 +2084,7 @@
   "bytes": 8626
  },
  "/wp-content/uploads/2023/11/Investera-i-AI-Aktier.webp": {
-  "file": "import/images/2023/11/Investera-i-AI-Aktier.webp",
+  "file": "src/assets/uploads/2023/11/Investera-i-AI-Aktier.webp",
   "used_by": [
    "ai-investeringar",
    "nyborjarguider",
@@ -2097,7 +2097,7 @@
   "bytes": 89338
  },
  "/wp-content/uploads/2023/11/campusbokhandeln-removebg-preview.png": {
-  "file": "import/images/2023/11/campusbokhandeln-removebg-preview.png",
+  "file": "src/assets/uploads/2023/11/campusbokhandeln-removebg-preview.png",
   "used_by": [
    "13-smarta-satt-att-spara-pengar-som-student"
   ],
@@ -2108,7 +2108,7 @@
   "bytes": 29954
  },
  "/wp-content/uploads/2023/11/enhanced_ai_market_size_growth_chart.png": {
-  "file": "import/images/2023/11/enhanced_ai_market_size_growth_chart.png",
+  "file": "src/assets/uploads/2023/11/enhanced_ai_market_size_growth_chart.png",
   "used_by": [
    "ai-investeringar"
   ],
@@ -2121,7 +2121,7 @@
   "bytes": 212789
  },
  "/wp-content/uploads/2023/11/refunder-logo.webp": {
-  "file": "import/images/2023/11/refunder-logo.webp",
+  "file": "src/assets/uploads/2023/11/refunder-logo.webp",
   "used_by": [
    "13-smarta-satt-att-spara-pengar-som-student"
   ],
@@ -2132,7 +2132,7 @@
   "bytes": 10854
  },
  "/wp-content/uploads/2023/12/Auto-6.webp": {
-  "file": "import/images/2023/12/Auto-6.webp",
+  "file": "src/assets/uploads/2023/12/Auto-6.webp",
   "used_by": [
    "avanza-auto-bra-eller-daligt-omdome"
   ],
@@ -2145,7 +2145,7 @@
   "bytes": 182964
  },
  "/wp-content/uploads/2023/12/ChatGPT-Website-Monthly-Views-2048x1072-1.jpg": {
-  "file": "import/images/2023/12/ChatGPT-Website-Monthly-Views-2048x1072-1.jpg",
+  "file": "src/assets/uploads/2023/12/ChatGPT-Website-Monthly-Views-2048x1072-1.jpg",
   "used_by": [
    "borsaret-2023-vinnare-och-forlorare"
   ],
@@ -2156,7 +2156,7 @@
   "bytes": 118004
  },
  "/wp-content/uploads/2023/12/DALL·E-2023-12-17-18.06.13-An-imaginative-depiction-of-a-monument-resembling-the-Bitcoin-logo-carved-into-a-mountain-similar-to-Mount-Rushmore.-The-scene-is-set-in-a-rocky-moun.webp": {
-  "file": "import/images/2023/12/DALL·E-2023-12-17-18.06.13-An-imaginative-depiction-of-a-monument-resembling-the-Bitcoin-logo-carved-into-a-mountain-similar-to-Mount-Rushmore.-The-scene-is-set-in-a-rocky-moun.webp",
+  "file": "src/assets/uploads/2023/12/DALL·E-2023-12-17-18.06.13-An-imaginative-depiction-of-a-monument-resembling-the-Bitcoin-logo-carved-into-a-mountain-similar-to-Mount-Rushmore.-The-scene-is-set-in-a-rocky-moun.webp",
   "used_by": [
    "borsaret-2023-vinnare-och-forlorare"
   ],
@@ -2167,7 +2167,7 @@
   "bytes": 241362
  },
  "/wp-content/uploads/2023/12/auto-removebg-preview.png": {
-  "file": "import/images/2023/12/auto-removebg-preview.png",
+  "file": "src/assets/uploads/2023/12/auto-removebg-preview.png",
   "used_by": [
    "avanza-auto-bra-eller-daligt-omdome"
   ],
@@ -2178,7 +2178,7 @@
   "bytes": 188975
  },
  "/wp-content/uploads/2023/12/avanza-global.webp": {
-  "file": "import/images/2023/12/avanza-global.webp",
+  "file": "src/assets/uploads/2023/12/avanza-global.webp",
   "used_by": [
    "avanza-auto-bra-eller-daligt-omdome"
   ],
@@ -2191,7 +2191,7 @@
   "bytes": 12408
  },
  "/wp-content/uploads/2023/12/avgiftsfritt.webp": {
-  "file": "import/images/2023/12/avgiftsfritt.webp",
+  "file": "src/assets/uploads/2023/12/avgiftsfritt.webp",
   "used_by": [
    "avanza-auto-bra-eller-daligt-omdome"
   ],
@@ -2204,7 +2204,7 @@
   "bytes": 4984
  },
  "/wp-content/uploads/2023/12/f-1.webp": {
-  "file": "import/images/2023/12/f-1.webp",
+  "file": "src/assets/uploads/2023/12/f-1.webp",
   "used_by": [
    "avanza-auto-bra-eller-daligt-omdome",
    "nyborjarguider",
@@ -2217,7 +2217,7 @@
   "bytes": 23456
  },
  "/wp-content/uploads/2023/12/image.png": {
-  "file": "import/images/2023/12/image.png",
+  "file": "src/assets/uploads/2023/12/image.png",
   "used_by": [
    "avanza-auto-bra-eller-daligt-omdome"
   ],
@@ -2228,7 +2228,7 @@
   "bytes": 11054
  },
  "/wp-content/uploads/2023/12/investeringskunskap-borsaret-2023-1.png": {
-  "file": "import/images/2023/12/investeringskunskap-borsaret-2023-1.png",
+  "file": "src/assets/uploads/2023/12/investeringskunskap-borsaret-2023-1.png",
   "used_by": [
    "borsaret-2023-vinnare-och-forlorare",
    "nyborjarguider",
@@ -2241,7 +2241,7 @@
   "bytes": 205812
  },
  "/wp-content/uploads/2024/01/647a262ae1c2eb3fef447eb3_ethereum-vs-bitcoin-1.png": {
-  "file": "import/images/2024/01/647a262ae1c2eb3fef447eb3_ethereum-vs-bitcoin-1.png",
+  "file": "src/assets/uploads/2024/01/647a262ae1c2eb3fef447eb3_ethereum-vs-bitcoin-1.png",
   "used_by": [
    "komplett-guide-olika-satt-att-investera-och-kopa-bitcoin"
   ],
@@ -2254,7 +2254,7 @@
   "bytes": 38775
  },
  "/wp-content/uploads/2024/01/Kopa-bitcoin-1.webp": {
-  "file": "import/images/2024/01/Kopa-bitcoin-1.webp",
+  "file": "src/assets/uploads/2024/01/Kopa-bitcoin-1.webp",
   "used_by": [
    "komplett-guide-olika-satt-att-investera-och-kopa-bitcoin",
    "senaste-inlaggen"
@@ -2266,7 +2266,7 @@
   "bytes": 23464
  },
  "/wp-content/uploads/2024/01/Namnlos-design.png": {
-  "file": "import/images/2024/01/Namnlos-design.png",
+  "file": "src/assets/uploads/2024/01/Namnlos-design.png",
   "used_by": [
    "basta-sparrantan-just-nu-jamfor-sparkonton-och-sparrantor"
   ],
@@ -2279,7 +2279,7 @@
   "bytes": 161976
  },
  "/wp-content/uploads/2024/01/Skarmavbild-2024-01-21-kl.-11.46.52.webp": {
-  "file": "import/images/2024/01/Skarmavbild-2024-01-21-kl.-11.46.52.webp",
+  "file": "src/assets/uploads/2024/01/Skarmavbild-2024-01-21-kl.-11.46.52.webp",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -2290,7 +2290,7 @@
   "bytes": 79452
  },
  "/wp-content/uploads/2024/01/Skarmavbild-2024-01-21-kl.-11.55.24.webp": {
-  "file": "import/images/2024/01/Skarmavbild-2024-01-21-kl.-11.55.24.webp",
+  "file": "src/assets/uploads/2024/01/Skarmavbild-2024-01-21-kl.-11.55.24.webp",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -2303,7 +2303,7 @@
   "bytes": 38878
  },
  "/wp-content/uploads/2024/01/Skarmavbild-2024-01-21-kl.-12.08.28.webp": {
-  "file": "import/images/2024/01/Skarmavbild-2024-01-21-kl.-12.08.28.webp",
+  "file": "src/assets/uploads/2024/01/Skarmavbild-2024-01-21-kl.-12.08.28.webp",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -2314,7 +2314,7 @@
   "bytes": 14784
  },
  "/wp-content/uploads/2024/01/Skarmavbild-2024-01-21-kl.-12.14.05.webp": {
-  "file": "import/images/2024/01/Skarmavbild-2024-01-21-kl.-12.14.05.webp",
+  "file": "src/assets/uploads/2024/01/Skarmavbild-2024-01-21-kl.-12.14.05.webp",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -2327,7 +2327,7 @@
   "bytes": 15710
  },
  "/wp-content/uploads/2024/01/Skarmavbild-2024-01-21-kl.-12.16.44.webp": {
-  "file": "import/images/2024/01/Skarmavbild-2024-01-21-kl.-12.16.44.webp",
+  "file": "src/assets/uploads/2024/01/Skarmavbild-2024-01-21-kl.-12.16.44.webp",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -2338,7 +2338,7 @@
   "bytes": 15612
  },
  "/wp-content/uploads/2024/01/avkastning.webp": {
-  "file": "import/images/2024/01/avkastning.webp",
+  "file": "src/assets/uploads/2024/01/avkastning.webp",
   "used_by": [
    "recension-omdome-av-savelend-2022"
   ],
@@ -2349,7 +2349,7 @@
   "bytes": 82742
  },
  "/wp-content/uploads/2024/01/bitcoin-image-blogpost.webp": {
-  "file": "import/images/2024/01/bitcoin-image-blogpost.webp",
+  "file": "src/assets/uploads/2024/01/bitcoin-image-blogpost.webp",
   "used_by": [
    "komplett-guide-olika-satt-att-investera-och-kopa-bitcoin"
   ],
@@ -2362,7 +2362,7 @@
   "bytes": 17472
  },
  "/wp-content/uploads/2024/01/bitcoin-network-structure.png": {
-  "file": "import/images/2024/01/bitcoin-network-structure.png",
+  "file": "src/assets/uploads/2024/01/bitcoin-network-structure.png",
   "used_by": [
    "komplett-guide-olika-satt-att-investera-och-kopa-bitcoin"
   ],
@@ -2375,7 +2375,7 @@
   "bytes": 38466
  },
  "/wp-content/uploads/2024/01/common-stocks-and-uncommon-profits-1.jpg": {
-  "file": "import/images/2024/01/common-stocks-and-uncommon-profits-1.jpg",
+  "file": "src/assets/uploads/2024/01/common-stocks-and-uncommon-profits-1.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2388,7 +2388,7 @@
   "bytes": 80558
  },
  "/wp-content/uploads/2024/01/f-_1_.webp": {
-  "file": "import/images/2024/01/f-_1_.webp",
+  "file": "src/assets/uploads/2024/01/f-_1_.webp",
   "used_by": [
    "basta-sparrantan-just-nu-jamfor-sparkonton-och-sparrantor",
    "senaste-inlaggen"
@@ -2400,7 +2400,7 @@
   "bytes": 44312
  },
  "/wp-content/uploads/2024/01/fooled-by-randomness-1.jpg": {
-  "file": "import/images/2024/01/fooled-by-randomness-1.jpg",
+  "file": "src/assets/uploads/2024/01/fooled-by-randomness-1.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2413,7 +2413,7 @@
   "bytes": 57713
  },
  "/wp-content/uploads/2024/01/market-wizards.jpg": {
-  "file": "import/images/2024/01/market-wizards.jpg",
+  "file": "src/assets/uploads/2024/01/market-wizards.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2426,7 +2426,7 @@
   "bytes": 60313
  },
  "/wp-content/uploads/2024/01/multitude-bank-logo-removebg-preview.webp": {
-  "file": "import/images/2024/01/multitude-bank-logo-removebg-preview.webp",
+  "file": "src/assets/uploads/2024/01/multitude-bank-logo-removebg-preview.webp",
   "used_by": [
    "basta-sparrantan-just-nu-jamfor-sparkonton-och-sparrantor"
   ],
@@ -2439,7 +2439,7 @@
   "bytes": 20608
  },
  "/wp-content/uploads/2024/01/one-up-on-wall-street.jpg": {
-  "file": "import/images/2024/01/one-up-on-wall-street.jpg",
+  "file": "src/assets/uploads/2024/01/one-up-on-wall-street.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2452,7 +2452,7 @@
   "bytes": 75862
  },
  "/wp-content/uploads/2024/01/satoshi-nakamoto_final-297c9027b6124891acf6e46918fa1b26.png": {
-  "file": "import/images/2024/01/satoshi-nakamoto_final-297c9027b6124891acf6e46918fa1b26.png",
+  "file": "src/assets/uploads/2024/01/satoshi-nakamoto_final-297c9027b6124891acf6e46918fa1b26.png",
   "used_by": [
    "komplett-guide-olika-satt-att-investera-och-kopa-bitcoin"
   ],
@@ -2465,7 +2465,7 @@
   "bytes": 55758
  },
  "/wp-content/uploads/2024/01/security-analysis.jpg": {
-  "file": "import/images/2024/01/security-analysis.jpg",
+  "file": "src/assets/uploads/2024/01/security-analysis.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2478,7 +2478,7 @@
   "bytes": 89813
  },
  "/wp-content/uploads/2024/01/the-intelligent-investor-1.jpg": {
-  "file": "import/images/2024/01/the-intelligent-investor-1.jpg",
+  "file": "src/assets/uploads/2024/01/the-intelligent-investor-1.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2491,7 +2491,7 @@
   "bytes": 222948
  },
  "/wp-content/uploads/2024/01/the-most-important-thing-1.jpg": {
-  "file": "import/images/2024/01/the-most-important-thing-1.jpg",
+  "file": "src/assets/uploads/2024/01/the-most-important-thing-1.jpg",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2504,7 +2504,7 @@
   "bytes": 87584
  },
  "/wp-content/uploads/2024/01/tirjo_webp.webp": {
-  "file": "import/images/2024/01/tirjo_webp.webp",
+  "file": "src/assets/uploads/2024/01/tirjo_webp.webp",
   "used_by": [
    "komplett-guide-olika-satt-att-investera-och-kopa-bitcoin",
    "trijo-adtraction-2",
@@ -2519,7 +2519,7 @@
   "bytes": 7026
  },
  "/wp-content/uploads/2024/02/Your-paragraph-text-1-pdf.jpg": {
-  "file": "import/images/2024/02/Your-paragraph-text-1-pdf.jpg",
+  "file": "src/assets/uploads/2024/02/Your-paragraph-text-1-pdf.jpg",
   "used_by": [
    "senaste-inlaggen"
   ],
@@ -2530,7 +2530,7 @@
   "bytes": 161449
  },
  "/wp-content/uploads/2024/02/Your-paragraph-text-1.pdf": {
-  "file": "import/images/2024/02/Your-paragraph-text-1.pdf",
+  "file": "src/assets/uploads/2024/02/Your-paragraph-text-1.pdf",
   "used_by": [
    "basta-aktiebockerna-att-lasa"
   ],
@@ -2541,7 +2541,7 @@
   "bytes": 302181
  },
  "/wp-content/uploads/2024/10/DALL·E-2024-10-07-16.34.50-A-detailed-illustration-for-a-blog-post-titled-Economic-Moats_-A-Key-to-Successful-Investing.-The-image-should-have-a-financial-theme-incorporating.webp": {
-  "file": "import/images/2024/10/DALL·E-2024-10-07-16.34.50-A-detailed-illustration-for-a-blog-post-titled-Economic-Moats_-A-Key-to-Successful-Investing.-The-image-should-have-a-financial-theme-incorporating.webp",
+  "file": "src/assets/uploads/2024/10/DALL·E-2024-10-07-16.34.50-A-detailed-illustration-for-a-blog-post-titled-Economic-Moats_-A-Key-to-Successful-Investing.-The-image-should-have-a-financial-theme-incorporating.webp",
   "used_by": [
    "ekonomiska-vallgravar-en-nyckel-till-framgangsrika-investeringar",
    "nyborjarguider",
@@ -2554,7 +2554,7 @@
   "bytes": 515286
  },
  "/wp-content/uploads/2024/10/Immateriella-tillgangar.png": {
-  "file": "import/images/2024/10/Immateriella-tillgangar.png",
+  "file": "src/assets/uploads/2024/10/Immateriella-tillgangar.png",
   "used_by": [
    "ekonomiska-vallgravar-en-nyckel-till-framgangsrika-investeringar"
   ],
@@ -2567,7 +2567,7 @@
   "bytes": 34282
  },
  "/wp-content/uploads/2026/01/Sa-gor-du-en-bankoverforing-–-steg-for-steg.png": {
-  "file": "import/images/2026/01/Sa-gor-du-en-bankoverforing-–-steg-for-steg.png",
+  "file": "src/assets/uploads/2026/01/Sa-gor-du-en-bankoverforing-–-steg-for-steg.png",
   "used_by": [
    "sa-gor-du-en-bankoverforing-steg-for-steg",
    "senaste-inlaggen"
@@ -2579,7 +2579,7 @@
   "bytes": 20778
  },
  "/wp-content/uploads/2026/07/Hur-du-valjer-ratt-konto-for-ditt-sparande-2026.png": {
-  "file": "import/images/2026/07/Hur-du-valjer-ratt-konto-for-ditt-sparande-2026.png",
+  "file": "src/assets/uploads/2026/07/Hur-du-valjer-ratt-konto-for-ditt-sparande-2026.png",
   "used_by": [
    "hur-du-valjer-ratt-konto-for-ditt-sparande-2026",
    "senaste-inlaggen"

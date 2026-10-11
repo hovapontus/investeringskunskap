@@ -1,7 +1,7 @@
 """Stage (a): download every image that is actually used (post/page content, featured images,
-reusable ad blocks, live-page content areas, site logo) from the live site into import/images/.
+reusable ad blocks, live-page content areas, site logo) from the live site into src/assets/uploads/.
 Prefers the full-size original (WordPress '-WxH' suffix stripped); falls back to the URL as referenced.
-Writes import/images/manifest.json (url -> local file, used_by, alt, status).
+Writes import/images-manifest.json (url -> local file, used_by, alt, status).
 """
 import json, re, sys, pathlib, time, glob, hashlib, concurrent.futures as cf
 import urllib.request, urllib.error
@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 root = pathlib.Path(__file__).resolve().parent.parent
 xml = next((root / "import").glob("*.xml"))
-out = root / "import" / "images"
+out = root / "src" / "assets" / "uploads"
 out.mkdir(exist_ok=True)
 HOST = "https://investeringskunskap.se"
 UP = re.compile(r"https?://(?:www\.)?investeringskunskap\.se(/wp-content/uploads/[^\s\"'<>)]+)", re.I)
@@ -137,7 +137,7 @@ manifest = {}
 with cf.ThreadPoolExecutor(6) as ex:
     for b, rec in ex.map(fetch, sorted(refs.items())):
         manifest[b] = rec
-(out / "manifest.json").write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
+(root / "import" / "images-manifest.json").write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
 ok = [k for k, v in manifest.items() if v["status"] == "ok"]
 bad = {k: v["status"] for k, v in manifest.items() if v["status"] != "ok"}
 print("downloaded ok:", len(ok), "failed:", len(bad))
