@@ -8,6 +8,11 @@
 /annonspolicy/ /om-sajten/ 301
 /disclaimer/ /om-sajten/ 301
 
+# Removed pages and posts
+/samarbetspartners/ /om-sajten/ 301
+/tips/ /category/tips/ 301
+/vi-finns-nu-pa-borskollen/ / 301
+
 # WordPress static front page, author archives and category alias
 /hem/ / 301
 /author/* / 301

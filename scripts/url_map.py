@@ -65,7 +65,7 @@ else:
     cache.write_text("\n".join(old) + "\n", encoding="utf-8")
 
 # ---- mapping rules (same path unless listed)
-REDIRECTS = {"/hem/": "/"}
+REDIRECTS = {"/hem/": "/", "/samarbetspartners/": "/om-sajten/", "/tips/": "/category/tips/", "/vi-finns-nu-pa-borskollen/": "/"}
 # Pages that exist only in the new site (never on live WordPress) and the redirects for removed ones
 EXTRA = [("/om-sajten/", 200, "new"), ("/kontakt/", 200, "new"), ("/om-oss/", 301, "removed -> /om-sajten/"),
          ("/annonspolicy/", 301, "removed -> /om-sajten/"), ("/disclaimer/", 301, "removed -> /om-sajten/")]

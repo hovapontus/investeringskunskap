@@ -38,7 +38,6 @@ export const MENU: MenuItem[] = [
     href: '/privatekonomi/',
     icon: 'person',
     children: [
-      { label: 'Tips', href: '/tips/' },
       { label: 'Räntekalkylator', href: '/ranta-pa-ranta-kalkylator/' },
       { label: 'Spara pengar', href: '/category/spara-pengar/' },
     ],
