@@ -64,3 +64,15 @@ export function buttonColors(bg: string): { bg: string; fg: string } {
   }
   return { bg: toHex(rgb), fg: toHex(fg) };
 }
+
+/**
+ * Posts whose facts go stale fastest: affiliate boxes/links, tables with rates/fees/prices,
+ * or "just nu"-style claims. These get the more prominent "not updated" note.
+ */
+export function goesStaleFast(source: string | undefined): boolean {
+  if (!source) return false;
+  if (hasAffiliate(source)) return true;
+  if (/\b(just nu|i nuläget|för närvarande|för tillfället|i skrivande stund|skrivande stund)\b/i.test(source)) return true;
+  const tables = source.match(/<HtmlTable html=\{"[^\n]*\} \/>/g) ?? [];
+  return tables.some((t) => /(ränta|räntor|avgift|avkastning|courtage|pris|kurs)/i.test(t));
+}

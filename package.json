@@ -8,7 +8,8 @@
     "build": "astro build && node scripts/copy-uploads.mjs && pagefind --site dist",
     "preview": "astro preview",
     "check": "astro check",
-    "convert": "python -I scripts/convert.py"
+    "convert": "python -I scripts/convert.py",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.3",

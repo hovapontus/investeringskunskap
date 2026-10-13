@@ -4,12 +4,13 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Toc from '../components/Toc.astro';
 import Disclosure from '../components/Disclosure.astro';
+import FreshnessNote from '../components/FreshnessNote.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import SideItem from '../components/SideItem.astro';
 import PostImage from '../components/PostImage.astro';
 import { mdxComponents } from '../lib/mdx-components';
 import { allPosts, categoryName, categoryUrl, tagName, tagUrl, related, type Post } from '../lib/content';
-import { hasAffiliate } from '../lib/affiliate';
+import { hasAffiliate, goesStaleFast } from '../lib/affiliate';
 import { getUpload } from '../lib/images';
 import { formatDate, initials } from '../lib/format';
 import { abs } from '../lib/site';
@@ -25,6 +26,7 @@ const d = post.data;
 const path = `/${post.id}/`;
 const cat = d.primaryCategory ?? d.categories[0];
 const affiliate = hasAffiliate(post.body);
+const staleFast = goesStaleFast(post.body);
 const more = related(post, await allPosts(), 6);
 
 let ogImage: string | undefined;
@@ -78,6 +80,8 @@ const updated = d.updatedDate && d.updatedDate.getTime() - d.pubDate.getTime() >
         </p>
       </div>
 
+      <FreshnessNote published={d.pubDate} strong={staleFast} />
+
       {d.image && <PostImage src={d.image} alt={d.imageAlt ?? ''} width={1500} height={750} sizes="(min-width: 1024px) 750px, 100vw" eager class="post__hero" />}
 
       <ShareButtons path={path} title={d.title} />
@@ -130,7 +134,7 @@ const updated = d.updatedDate && d.updatedDate.getTime() - d.pubDate.getTime() >
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 0.9rem;
   }
   .byline__avatar {
     flex: none;

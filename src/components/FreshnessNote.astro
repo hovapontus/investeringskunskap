@@ -1,0 +1,39 @@
+---
+// "Not updated any more" note shown under the byline of every post; stronger when facts go stale fast.
+import { formatDate } from '../lib/format';
+
+interface Props {
+  published: Date;
+  strong?: boolean;
+}
+const { published, strong = false } = Astro.props;
+---
+
+<p class:list={['note', { 'note--strong': strong }]} role="note">
+  {
+    strong ? (
+      <>
+        <strong>Obs!</strong> Publicerades {formatDate(published)}. Inlägget uppdateras inte längre, så räntor, avgifter, priser och villkor kan vara
+        inaktuella. Kontrollera alltid aktuella uppgifter hos respektive leverantör.
+      </>
+    ) : (
+      <>Publicerades {formatDate(published)}. Inlägget uppdateras inte längre, så uppgifter om räntor, priser och villkor kan vara inaktuella.</>
+    )
+  }
+</p>
+
+<style>
+  .note {
+    margin: 0 0 1.4rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .note--strong {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.875rem;
+    color: #4a3b00;
+    background: #fff8e1;
+    border-left: 4px solid #e0a800;
+  }
+</style>
