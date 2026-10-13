@@ -3,6 +3,11 @@
 /kopa-guld-en-guide/ /investera-i-guld/ 301
 /basta-finanspoddarna-for-att-bli-en-lyckad-investerare/ /finanspoddar-for-att-bli-en-lyckad-investerare/ 301
 
+# Removed pages, merged into /om-sajten/
+/om-oss/ /om-sajten/ 301
+/annonspolicy/ /om-sajten/ 301
+/disclaimer/ /om-sajten/ 301
+
 # WordPress static front page, author archives and category alias
 /hem/ / 301
 /author/* / 301

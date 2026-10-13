@@ -66,6 +66,9 @@ else:
 
 # ---- mapping rules (same path unless listed)
 REDIRECTS = {"/hem/": "/"}
+# Pages that exist only in the new site (never on live WordPress) and the redirects for removed ones
+EXTRA = [("/om-sajten/", 200, "new"), ("/kontakt/", 200, "new"), ("/om-oss/", 301, "removed -> /om-sajten/"),
+         ("/annonspolicy/", 301, "removed -> /om-sajten/"), ("/disclaimer/", 301, "removed -> /om-sajten/")]
 
 
 def classify(path):
@@ -89,6 +92,12 @@ for u in sorted(set(old)):
     ok = status == expected and (expected != 301 or (loc or "").rstrip("/").endswith(new_path.rstrip("/")))
     failures += not ok
     rows.append({"old_url": u, "type": classify(path), "new_url": "https://investeringskunskap.se" + new_path,
+                 "expected_status": expected, "local_status": status, "redirect_to": loc or "", "ok": "yes" if ok else "NO"})
+for path, expected, kind in EXTRA:
+    status, _, loc = get(LOCAL + path, follow=False)
+    ok = status == expected and (expected != 301 or (loc or "").rstrip("/").endswith("/om-sajten"))
+    failures += not ok
+    rows.append({"old_url": "(not on live site)", "type": kind, "new_url": "https://investeringskunskap.se" + path,
                  "expected_status": expected, "local_status": status, "redirect_to": loc or "", "ok": "yes" if ok else "NO"})
 with open(root / "import" / "url-map.csv", "w", newline="", encoding="utf-8-sig") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))

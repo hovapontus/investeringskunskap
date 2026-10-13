@@ -7,7 +7,7 @@ import ProsCons from '../components/mdx/ProsCons.astro';
 import YouTube from '../components/mdx/YouTube.astro';
 import Embed from '../components/mdx/Embed.astro';
 import CompoundCalculator from '../components/mdx/CompoundCalculator.astro';
-import ContactForm from '../components/mdx/ContactForm.astro';
+import ContactEmail from '../components/mdx/ContactEmail.astro';
 
 export const mdxComponents = {
   a: Link,
@@ -19,5 +19,5 @@ export const mdxComponents = {
   YouTube,
   Embed,
   CompoundCalculator,
-  ContactForm,
+  ContactEmail,
 };

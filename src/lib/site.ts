@@ -9,6 +9,9 @@ export const SITE = {
   categoryFirstPageSize: 12, // 2 hero cards + 10 posts
 };
 
+// Single place for the contact address (rendered obfuscated by ContactEmail.astro)
+export const CONTACT_EMAIL = 'info@investeringskunskap.se';
+
 export const abs = (path: string) => new URL(path, SITE.url).toString();
 
 // Hard-coded main menu, same dropdowns as the live site.
@@ -40,5 +43,5 @@ export const MENU: MenuItem[] = [
       { label: 'Spara pengar', href: '/category/spara-pengar/' },
     ],
   },
-  { label: 'Senaste inlägg', href: '/senaste-inlaggen/', icon: 'news' },
+  { label: 'Alla inlägg', href: '/senaste-inlaggen/', icon: 'news' },
 ];

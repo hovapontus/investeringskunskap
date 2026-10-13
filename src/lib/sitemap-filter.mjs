@@ -4,7 +4,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 const draftPages = new Set();
 for (const f of readdirSync('src/content/pages')) {
   const fm = readFileSync(`src/content/pages/${f}`, 'utf8').split('\n---')[0];
-  if (/^draft:\s*true/m.test(fm) || /^noindex:\s*true/m.test(fm)) draftPages.add(f.replace(/\.mdx$/, ''));
+  if (/^noindex:\s*true/m.test(fm)) draftPages.add(f.replace(/\.mdx$/, ''));
 }
 
 // Tags with a single post are noindexed (see src/pages/tag/[slug]/[...page].astro)

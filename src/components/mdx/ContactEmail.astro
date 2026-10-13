@@ -1,0 +1,30 @@
+---
+// Contact e-mail, assembled in the browser so the address is not present as a plain mailto link in the HTML.
+// Without JavaScript the visitor sees "info [at] domain" as plain text. Address: CONTACT_EMAIL in src/lib/site.ts.
+import { CONTACT_EMAIL } from '../../lib/site';
+
+const [user, domain] = CONTACT_EMAIL.split('@');
+const fallback = `${user} [at] ${domain}`;
+---
+
+<p class="contact-email">
+  <span data-contact-email data-user={user.split('').reverse().join('')} data-domain={domain.split('').reverse().join('')}>{fallback}</span>
+</p>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-contact-email]').forEach((el) => {
+    const rev = (s: string) => s.split('').reverse().join('');
+    const address = `${rev(el.dataset.user ?? '')}@${rev(el.dataset.domain ?? '')}`;
+    const a = document.createElement('a');
+    a.href = `mailto:${address}`;
+    a.textContent = address;
+    el.replaceChildren(a);
+  });
+</script>
+
+<style>
+  .contact-email {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+</style>

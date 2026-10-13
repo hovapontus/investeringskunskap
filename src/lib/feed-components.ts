@@ -9,5 +9,5 @@ export const feedComponents = {
   Embed: FeedLink,
   AffiliateBox: FeedAffiliate,
   CompoundCalculator: FeedLink,
-  ContactForm: FeedLink,
+  ContactEmail: FeedLink,
 };

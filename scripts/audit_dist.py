@@ -10,7 +10,7 @@ SITE = "https://investeringskunskap.se"
 x = (dist / "sitemap-0.xml").read_text(encoding="utf-8")
 paths = [u.replace(SITE, "") for u in re.findall(r"<loc>([^<]+)</loc>", x)]
 print("sitemap urls:", len(paths))
-print("  draft/utility pages present (should be []):", [p for p in paths if p in ("/om-oss/", "/kontakt/", "/disclaimer/", "/annonspolicy/", "/sok/", "/404/", "/hem/")])
+print("  removed/utility pages present (should be []):", [p for p in paths if p in ("/om-oss/", "/disclaimer/", "/annonspolicy/", "/sok/", "/404/", "/hem/")])
 thin = ["/tag/tesla/", "/tag/vin/", "/tag/fire/", "/tag/guld/", "/tag/podd/", "/tag/ekonomipolitik/"]
 print("  one-post tags present (should be []):", [p for p in paths if p in thin])
 print("  kinds:", dict(collections.Counter("tag" if p.startswith("/tag/") else "category" if p.startswith("/category/") else "root" for p in paths)))

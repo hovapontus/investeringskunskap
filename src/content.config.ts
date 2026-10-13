@@ -37,7 +37,6 @@ const pages = defineCollection({
     seoTitle: z.string().optional(),
     updatedDate: z.coerce.date().optional(),
     noindex: z.boolean().default(false),
-    draft: z.boolean().default(false), // shows a "draft" notice, is noindexed and kept out of the sitemap
     handwritten: z.boolean().optional(),
     wpId: z.number().optional(),
   }),

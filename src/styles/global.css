@@ -217,19 +217,6 @@ a {
   color: var(--heading);
 }
 
-.draft-banner {
-  margin: 1.5rem 0;
-  padding: 0.9rem 1.1rem;
-  background: #fff4cc;
-  border: 2px dashed #c79400;
-  border-radius: 6px;
-  color: #4a3600;
-}
-.draft-banner strong {
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto !important;

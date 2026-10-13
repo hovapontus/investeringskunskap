@@ -9,7 +9,7 @@ BASE = sys.argv[1].rstrip("/")
 root = pathlib.Path(__file__).resolve().parent.parent
 sitemap = (root / "dist" / "sitemap-0.xml").read_text(encoding="utf-8")
 paths = [u.replace("https://investeringskunskap.se", "") for u in re.findall(r"<loc>([^<]+)</loc>", sitemap)]
-paths += ["/sok/", "/om-oss/", "/kontakt/", "/disclaimer/", "/annonspolicy/", "/tag/tesla/"]
+paths += ["/sok/", "/kontakt/", "/om-sajten/", "/tag/tesla/"]
 axe_src = (root / "node_modules/axe-core/axe.min.js").read_text(encoding="utf-8")
 
 problems = collections.defaultdict(list)

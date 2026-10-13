@@ -1,4 +1,7 @@
-"""Stage (b): convert the WordPress export into MDX content collections.
+"""ONE-OFF migration script. The content in src/content has been edited by hand since (page removals,
+wording, contact page); re-running this overwrites those edits. Keep for reference only.
+
+Stage (b): convert the WordPress export into MDX content collections.
 
   python -I scripts/convert.py
 
@@ -627,7 +630,7 @@ for it in sorted(ITEMS.values(), key=lambda x: x["post_date"]):
         report["posts_with_affiliate_boxes"].append(slug)
 
 # ---------------------------------------------------------------- pages
-HANDWRITTEN = {"samarbetspartners"}  # rewritten by hand; the converter must not overwrite them
+HANDWRITTEN = {"samarbetspartners", "integritetspolicy", "senaste-inlaggen"}  # rewritten by hand; the converter must not overwrite them
 PAGE_LAYOUT = {"aktier": ("landing", "aktier", None), "fonder": ("landing", "fonder", None),
                "kryptovaluta": ("landing", "krypto", None), "privatekonomi": ("landing", "privatekonomi", None),
                "alternativa-investeringar": ("landing", "alternativa-investeringar", None),

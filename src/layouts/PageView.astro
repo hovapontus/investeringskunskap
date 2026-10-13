@@ -48,7 +48,7 @@ if (d.heroImage) {
   const img = await getImage({ src: await getUpload(d.heroImage), width: 1200, height: 630, fit: 'cover', format: 'jpg' });
   ogImage = abs(img.src);
 }
-const noindex = d.noindex || d.draft;
+const noindex = d.noindex;
 const crumbs = [{ name: 'Hem', path: '/' }, { name: d.title, path }];
 const heading = d.template === 'landing' ? (d.heading ?? d.title) : d.title;
 ---
@@ -81,13 +81,7 @@ const heading = d.template === 'landing' ? (d.heading ?? d.title) : d.title;
       )
     }
 
-    {d.draft && (
-      <p class="draft-banner" role="note">
-        <strong>Utkast:</strong> Den här sidan är ett förslag som behöver granskas och kompletteras (markerat med <strong>[FYLL I: …]</strong>) innan den publiceras. Sidan är dold för sökmotorer tills <code>draft: true</code> tas bort i filen.
-      </p>
-    )}
-
-    <div class:list={['page-body', { 'page-body--narrow': d.template !== 'landing' }]} data-pagefind-body={(d.template === 'default' || d.template === 'calculator') && !d.draft ? '' : undefined}>
+    <div class:list={['page-body', { 'page-body--narrow': d.template !== 'landing' }]} data-pagefind-body={(d.template === 'default' || d.template === 'calculator') ? '' : undefined}>
       <div class:list={['prose', { 'landing__intro': d.template === 'landing' }]}>
         <Content components={mdxComponents} />
       </div>

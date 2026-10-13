@@ -17,7 +17,7 @@ const latest = (await allPosts()).slice(0, 3);
       <input id="nf-q" name="q" type="search" placeholder="Sök efter inlägg…" />
       <button type="submit">Sök</button>
     </form>
-    <h2 class="section-title">Senaste inläggen</h2>
+    <h2 class="section-title">Några inlägg</h2>
     <div class="grid">
       {latest.map((p) => <PostCard post={p} />)}
     </div>

@@ -1,12 +1,10 @@
 ---
 const year = new Date().getFullYear();
 const links = [
-  { href: '/om-oss/', label: 'Om oss' },
+  { href: '/om-sajten/', label: 'Om sajten och annonser' },
   { href: '/kontakt/', label: 'Kontakt' },
   { href: '/samarbetspartners/', label: 'Samarbetspartners' },
   { href: '/tips/', label: 'Tips' },
-  { href: '/disclaimer/', label: 'Disclaimer' },
-  { href: '/annonspolicy/', label: 'Annonspolicy' },
   { href: '/integritetspolicy/', label: 'Integritetspolicy' },
 ];
 ---
@@ -15,18 +13,16 @@ const links = [
   <div class="container">
     <div class="site-footer__cols">
       <p>
-        Vi delar med oss av tips och nyanserade omdömen för olika investeringsplattformar samt olika sparformer.
-        Har du frågor eller tips? Använd vår <a href="/kontakt/">kontaktsida</a>.
+        Allmän information om sparande och investeringar, sedan 2022. Sajten uppdateras inte längre, så uppgifter kan vara inaktuella.
+        Se <a href="/om-sajten/">Om sajten och annonser</a>.
       </p>
       <p>
-        <strong>Disclaimer &amp; annonspolicy:</strong> Handel med värdepapper innebär alltid en risk. Historisk avkastning är ingen garanti för framtida avkastning.
-        En investering i värdepapper/fonder kan både öka och minska i värde och det är inte säkert att du får tillbaka det investerade kapitalet.
-        Ingenting på Investeringskunskap.se ska ses som finansiell rådgivning utan endast inspiration. Det är upp till dig att göra en riskbedömning innan du väljer att investera dina pengar.
-        Länkar till exempelvis Avanza och andra partners kan vara samarbetslänkar. Läs mer i vår <a href="/disclaimer/">disclaimer</a> och <a href="/annonspolicy/">annonspolicy</a>.
+        Innehållet är inte investeringsrådgivning. Handel med värdepapper innebär alltid risk, och historisk avkastning är ingen garanti för framtiden.
+        Vissa länkar är annonslänkar som kan ge sajten ersättning.
       </p>
     </div>
     <div class="site-footer__bar">
-      <p class="site-footer__copy">© {year} Investeringskunskap</p>
+      <p class="site-footer__copy">© 2022–{year} Investeringskunskap</p>
       <nav aria-label="Sidfot">
         <ul>
           {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
