@@ -10,7 +10,7 @@ export const SITE = {
 };
 
 // Single place for the contact address (rendered obfuscated by ContactEmail.astro)
-export const CONTACT_EMAIL = 'info@investeringskunskap.se';
+export const CONTACT_EMAIL = 'investeringskunskap@gmail.com';
 
 export const abs = (path: string) => new URL(path, SITE.url).toString();
 
